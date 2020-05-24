@@ -8,9 +8,9 @@
 
     <StackLayout>
         <!-- Place new controls here -->
-        <Label Text="Cupra merda" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+        <Entry x:Name="Entry_username" Placeholder="Username"/>
+        <Entry x:Name="Entry_Password" Placeholder="Password"/>
+        <Button x:Name="Btn_signin" Text="Sign in" Clicked=""/>
     </StackLayout>
 
 </ContentPage>
