@@ -13,15 +13,9 @@ namespace NoQueue
     [DesignTimeVisible (false)]
     public partial class MainPage : ContentPage
     {
-       
         public MainPage()
         {
             InitializeComponent();
-        }
-
-        private void Btn_signin_Clicked(object sender, EventArgs e)
-        {
-
         }
     }
 }

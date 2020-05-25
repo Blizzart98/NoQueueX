@@ -6,25 +6,11 @@
              mc:Ignorable="d"
              x:Class="NoQueue.MainPage">
 
-    <StackLayout 
-        TranslationY="100"
-        Padding="40">
+    <StackLayout>
         <!-- Place new controls here -->
-        <Image Source="@drawable/ic_launcher_round"/>
-        <Label Text="Benvenuto su NoQueue" 
-               FontSize="Title" 
-               TextColor="Black" 
-               HorizontalTextAlignment="Center"/>
-        
-        <Label Text="Per favore effettuare il Log In" 
-               FontSize="Body"
-               HorizontalTextAlignment="Center"/>
-        
-        <Entry x:Name="Entry_email" Placeholder="Email"/>
-        <Entry x:Name="Entry_Password" Placeholder="Password"/>
-        <Button x:Name="Btn_signin" Text="Log in" Clicked="Btn_signin_Clicked"/>
-        <Button x:Name="Btn_registration" Text="Non hai ancora un account?" />
-       
+        <Label Text="Welcome to Xamarin.Forms!" 
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />
     </StackLayout>
 
 </ContentPage>
