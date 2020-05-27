@@ -34,5 +34,19 @@ namespace NoQueue.Droid
             }
 
         }
+
+        public bool RegisterWithEmailPassword(string email, string password)
+        {
+            try
+            {
+                var signUpTask = FirebaseAuth.Instance.CreateUserWithEmailAndPassword(email, password);
+
+                return signUpTask.Result != null;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
     }
 }

@@ -19,11 +19,27 @@
         <Label Text="Per favore effettuare il Login" 
                FontSize="Body"
                HorizontalTextAlignment="Center"/>
+
+        <Entry x:Name="Entry_email" 
+               Placeholder="Email"
+               Keyboard="Email"/>
+
+        <Entry x:Name="Entry_Password" 
+               Placeholder="Password"
+               Keyboard="Text"
+               IsPassword="true"/>
         
-        <Entry x:Name="Entry_email" Placeholder="Email"/>
-        <Entry x:Name="Entry_Password" Placeholder="Password"/>
-        <Button x:Name="Btn_signin" Text="Log in" Clicked="Btn_signin_Clicked"/>
-        <Button x:Name="Btn_registration" Text="Non hai ancora un account?" />
+        <Button x:Name="Btn_signin" 
+                Text="Log in" 
+                BackgroundColor="#4682B4"
+                TextColor="White"
+                Clicked="Btn_signin_Clicked"/>
+        
+        <Button x:Name="Btn_registration" 
+                BackgroundColor="#4682B4"
+                TextColor="White"
+                Text="Non hai ancora un account?"
+                Clicked="Btn_registration_Clicked"/>
        
     </StackLayout>
 

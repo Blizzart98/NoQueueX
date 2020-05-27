@@ -38,5 +38,10 @@ namespace NoQueue
         {
             await DisplayAlert("Authentication Failed", "E-mail or password are incorrect. Try again!", "OK");
         }
+
+        async void Btn_registration_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new RegisterPage());
+        }
     }
 }

@@ -8,5 +8,6 @@ namespace NoQueue
    public interface InterfaceAuth
     {
         Task<string> LoginWithEmailPassword(string email, string password);
+        bool RegisterWithEmailPassword(string email, string password);
     }
 }
