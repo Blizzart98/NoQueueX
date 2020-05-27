@@ -17,7 +17,7 @@
                HorizontalTextAlignment="Center"/>
         
         <Label Text="Per favore effettuare il Log In" 
-               FontSize="Body"d
+               FontSize="Body"
                HorizontalTextAlignment="Center"/>
         
         <Entry x:Name="Entry_email" Placeholder="Email"/>
