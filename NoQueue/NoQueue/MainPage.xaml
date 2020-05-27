@@ -16,7 +16,7 @@
                TextColor="Black" 
                HorizontalTextAlignment="Center"/>
         
-        <Label Text="Per favore effettuare il Log In" 
+        <Label Text="Per favore effettuare il Login" 
                FontSize="Body"
                HorizontalTextAlignment="Center"/>
         

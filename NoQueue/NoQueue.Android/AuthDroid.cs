@@ -12,10 +12,12 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Xamarin.Forms;
 
+[assembly:Dependency(typeof(NoQueue.Droid.AuthDroid))]
 namespace NoQueue.Droid
 {
-    class AuthDroid : InterfaceAuth
+    public class AuthDroid : InterfaceAuth
     {
         public async Task<string> LoginWithEmailPassword(string email, string password)
         {

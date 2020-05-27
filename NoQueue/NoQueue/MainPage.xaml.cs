@@ -20,7 +20,7 @@ namespace NoQueue
             auth = DependencyService.Get<InterfaceAuth>();
         }
 
-        async private void Btn_signin_Clicked(object sender, EventArgs e)
+        async  void Btn_signin_Clicked(object sender, EventArgs e)
         {
             string Token = await auth.LoginWithEmailPassword(Entry_email.Text, Entry_Password.Text);
             if (Token != "")
