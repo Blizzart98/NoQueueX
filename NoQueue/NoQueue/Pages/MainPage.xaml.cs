@@ -24,7 +24,10 @@ namespace NoQueue
         {
             bool result = await auth.AuthenticateUser(Entry_email.Text, Entry_Password.Text);
             if (result)
-                await App.Current.MainPage.Navigation.PopAsync();
+            {
+                await Navigation.PushAsync(new ProfilePage());
+                Navigation.RemovePage(this);
+            }
             else
             {
                 ShowError();
@@ -38,10 +41,9 @@ namespace NoQueue
         }
 
          void Btn_registration_Clicked(object sender, EventArgs e)
-        {
+        { 
             Navigation.PushAsync(new RegisterPage());
             Navigation.RemovePage(this);
-                
         }
     }
 }

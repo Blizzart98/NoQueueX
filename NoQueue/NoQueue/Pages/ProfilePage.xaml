@@ -14,4 +14,12 @@
                 FontSize="Large"/>
         </StackLayout>
     </ContentPage.Content>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text=""
+                     Clicked="ToolbarItem_Clicked"
+                 IconImageSource="icon_logout.png"
+                 Order="Primary"
+                 Priority="0" />
+    </ContentPage.ToolbarItems>
 </ContentPage>

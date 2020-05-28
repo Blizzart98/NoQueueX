@@ -12,9 +12,20 @@ namespace NoQueue
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ProfilePage : ContentPage
     {
+        InterfaceAuth auth;
         public ProfilePage()
         {
             InitializeComponent();
+        }
+
+        private void ToolbarItem_Clicked(object sender, EventArgs e)
+        {
+           
+
+        }
+        async private void ShowError()
+        {
+            await DisplayAlert("Logout Failed", "Lol", "OK");
         }
     }
 }

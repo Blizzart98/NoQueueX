@@ -14,7 +14,6 @@ namespace NoQueue
 
         bool IsAuthenticated();
         string GetCurrentUserId();
-
     }
 
     public class Auth
@@ -34,6 +33,7 @@ namespace NoQueue
             }
         }
 
+        
         public static async Task<bool> AuthenticateUser(string email, string password)
         {
             try

@@ -8414,6 +8414,9 @@ namespace NoQueue.Droid
 			// aapt resource value: 0x7F070076
 			public const int googleg_standard_color_18 = 2131165302;
 			
+			// aapt resource value: 0x7F07007B
+			public const int icon_logout = 2131165307;
+			
 			// aapt resource value: 0x7F070077
 			public const int ic_launcher_round = 2131165303;
 			
@@ -8426,56 +8429,56 @@ namespace NoQueue.Droid
 			// aapt resource value: 0x7F07007A
 			public const int ic_mtrl_chip_close_circle = 2131165306;
 			
-			// aapt resource value: 0x7F07007B
-			public const int mtrl_snackbar_background = 2131165307;
-			
 			// aapt resource value: 0x7F07007C
-			public const int mtrl_tabs_default_indicator = 2131165308;
+			public const int mtrl_snackbar_background = 2131165308;
 			
 			// aapt resource value: 0x7F07007D
-			public const int navigation_empty_icon = 2131165309;
+			public const int mtrl_tabs_default_indicator = 2131165309;
 			
 			// aapt resource value: 0x7F07007E
-			public const int notification_action_background = 2131165310;
+			public const int navigation_empty_icon = 2131165310;
 			
 			// aapt resource value: 0x7F07007F
-			public const int notification_bg = 2131165311;
+			public const int notification_action_background = 2131165311;
 			
 			// aapt resource value: 0x7F070080
-			public const int notification_bg_low = 2131165312;
+			public const int notification_bg = 2131165312;
 			
 			// aapt resource value: 0x7F070081
-			public const int notification_bg_low_normal = 2131165313;
+			public const int notification_bg_low = 2131165313;
 			
 			// aapt resource value: 0x7F070082
-			public const int notification_bg_low_pressed = 2131165314;
+			public const int notification_bg_low_normal = 2131165314;
 			
 			// aapt resource value: 0x7F070083
-			public const int notification_bg_normal = 2131165315;
+			public const int notification_bg_low_pressed = 2131165315;
 			
 			// aapt resource value: 0x7F070084
-			public const int notification_bg_normal_pressed = 2131165316;
+			public const int notification_bg_normal = 2131165316;
 			
 			// aapt resource value: 0x7F070085
-			public const int notification_icon_background = 2131165317;
+			public const int notification_bg_normal_pressed = 2131165317;
 			
 			// aapt resource value: 0x7F070086
-			public const int notification_template_icon_bg = 2131165318;
+			public const int notification_icon_background = 2131165318;
 			
 			// aapt resource value: 0x7F070087
-			public const int notification_template_icon_low_bg = 2131165319;
+			public const int notification_template_icon_bg = 2131165319;
 			
 			// aapt resource value: 0x7F070088
-			public const int notification_tile_bg = 2131165320;
+			public const int notification_template_icon_low_bg = 2131165320;
 			
 			// aapt resource value: 0x7F070089
-			public const int notify_panel_notification_icon_bg = 2131165321;
+			public const int notification_tile_bg = 2131165321;
 			
 			// aapt resource value: 0x7F07008A
-			public const int tooltip_frame_dark = 2131165322;
+			public const int notify_panel_notification_icon_bg = 2131165322;
 			
 			// aapt resource value: 0x7F07008B
-			public const int tooltip_frame_light = 2131165323;
+			public const int tooltip_frame_dark = 2131165323;
+			
+			// aapt resource value: 0x7F07008C
+			public const int tooltip_frame_light = 2131165324;
 			
 			static Drawable()
 			{
@@ -9708,13 +9711,10 @@ namespace NoQueue.Droid
 			public const int path_password_strike_through = 2131558475;
 			
 			// aapt resource value: 0x7F0D004C
-			public const int project_id = 2131558476;
+			public const int search_menu_title = 2131558476;
 			
 			// aapt resource value: 0x7F0D004D
-			public const int search_menu_title = 2131558477;
-			
-			// aapt resource value: 0x7F0D004E
-			public const int status_bar_notification_info_overflow = 2131558478;
+			public const int status_bar_notification_info_overflow = 2131558477;
 			
 			static String()
 			{

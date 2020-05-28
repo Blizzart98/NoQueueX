@@ -35,7 +35,7 @@ namespace NoQueue
                 }
 
                 await DisplayAlert("Success", "Welcome to our system. Log in to have full access", "OK");
-                await Navigation.PushAsync(new ProfilePage());
+                Navigation.PushAsync(new ProfilePage());
                 Navigation.RemovePage(this);
             }
             else

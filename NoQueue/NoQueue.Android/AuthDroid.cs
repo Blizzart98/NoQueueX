@@ -32,25 +32,13 @@ namespace NoQueue.Droid
         {
             try
             {
-                await Firebase.Auth.FirebaseAuth.Instance.SignInWithEmailAndPasswordAsync(email, password);
+                await FirebaseAuth.Instance.SignInWithEmailAndPasswordAsync(email, password);
 
                 return true;
             }
-            catch (FirebaseAuthWeakPasswordException ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            catch (FirebaseAuthInvalidCredentialsException ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            catch (FirebaseAuthInvalidUserException ex)
-            {
-                throw new Exception(ex.Message);
-            }
             catch (Exception ex)
             {
-                throw new Exception("An unknown error occurred, please try again.");
+                return false;
             }
         }
 
@@ -97,4 +85,5 @@ namespace NoQueue.Droid
 
         }
     }
+    
 }
