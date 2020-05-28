@@ -13,40 +13,88 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Xamarin.Forms;
+using Firebase.Firestore;
+using Firebase;
+using Xamarin.Forms.Xaml;
+using Java.Util;
 
 [assembly:Dependency(typeof(NoQueue.Droid.AuthDroid))]
 namespace NoQueue.Droid
 {
     public class AuthDroid : InterfaceAuth
     {
-        public async Task<string> LoginWithEmailPassword(string email, string password)
+        public AuthDroid()
         {
-            try
-            {
-                var user = await FirebaseAuth.Instance.SignInWithEmailAndPasswordAsync(email, password);
-                var token = await user.User.GetIdTokenAsync(false);
-                return token.Token;
-            }
-            catch (FirebaseAuthInvalidUserException e)
-            {
-                e.PrintStackTrace();
-                return "";
-            }
 
         }
 
-        public bool RegisterWithEmailPassword(string email, string password)
+        public async Task<bool> AuthenticateUser(string email, string password)
         {
             try
             {
-                var signUpTask = FirebaseAuth.Instance.CreateUserWithEmailAndPassword(email, password);
+                await Firebase.Auth.FirebaseAuth.Instance.SignInWithEmailAndPasswordAsync(email, password);
 
-                return signUpTask.Result != null;
+                return true;
             }
-            catch (Exception e)
+            catch (FirebaseAuthWeakPasswordException ex)
             {
-                return false;
+                throw new Exception(ex.Message);
             }
+            catch (FirebaseAuthInvalidCredentialsException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            catch (FirebaseAuthInvalidUserException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("An unknown error occurred, please try again.");
+            }
+        }
+
+        public string GetCurrentUserId()
+        {
+            return Firebase.Auth.FirebaseAuth.Instance.CurrentUser.Uid;
+        }
+
+        public bool IsAuthenticated()
+        {
+            return Firebase.Auth.FirebaseAuth.Instance.CurrentUser != null;
+        }
+
+        public async Task<bool> RegisterUser( string email, string password)
+        {
+            try
+            {
+                await Firebase.Auth.FirebaseAuth.Instance.CreateUserWithEmailAndPasswordAsync(email, password);
+
+                var profileUpdates = new Firebase.Auth.UserProfileChangeRequest.Builder();
+                profileUpdates.SetDisplayName(email);
+                var build = profileUpdates.Build();
+                var user = Firebase.Auth.FirebaseAuth.Instance.CurrentUser;
+                await user.UpdateProfileAsync(build);
+
+                return true;
+            }
+            catch (FirebaseAuthWeakPasswordException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            catch (FirebaseAuthInvalidCredentialsException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            catch (FirebaseAuthUserCollisionException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("An unknown error occurred, please try again.");
+            }
+
         }
     }
 }

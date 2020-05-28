@@ -14,6 +14,7 @@ using Android.Widget;
 using Android.OS;
 using Firebase.Auth;
 using Xamarin.Forms;
+using Firebase.Firestore;
 
 namespace NoQueue.Droid
 {
@@ -32,8 +33,7 @@ namespace NoQueue.Droid
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
             LoadApplication(new App());
-
-  
+          
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {

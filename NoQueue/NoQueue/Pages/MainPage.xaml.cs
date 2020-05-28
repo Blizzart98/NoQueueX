@@ -22,11 +22,9 @@ namespace NoQueue
 
         async  void Btn_signin_Clicked(object sender, EventArgs e)
         {
-            string Token = await auth.LoginWithEmailPassword(Entry_email.Text, Entry_Password.Text);
-            if (Token != "")
-            {
-                await Navigation.PushAsync(new ProfilePage());
-            }
+            bool result = await auth.AuthenticateUser(Entry_email.Text, Entry_Password.Text);
+            if (result)
+                await App.Current.MainPage.Navigation.PopAsync();
             else
             {
                 ShowError();
@@ -39,7 +37,7 @@ namespace NoQueue
             await DisplayAlert("Authentication Failed", "E-mail or password are incorrect. Try again!", "OK");
         }
 
-        async void Btn_registration_Clicked(object sender, EventArgs e)
+         void Btn_registration_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new RegisterPage());
             Navigation.RemovePage(this);
