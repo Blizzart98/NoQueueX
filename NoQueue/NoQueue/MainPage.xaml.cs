@@ -41,7 +41,9 @@ namespace NoQueue
 
         async void Btn_registration_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new RegisterPage());
+            Navigation.PushAsync(new RegisterPage());
+            Navigation.RemovePage(this);
+                
         }
     }
 }
