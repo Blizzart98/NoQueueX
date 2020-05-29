@@ -10,17 +10,23 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Firebase;
 using Firebase.Firestore;
+using Java.Util;
 using NoQueue.Entities;
 using NoQueue.Interfaces;
+using Xamarin.Forms;
 
+[assembly: Dependency(typeof(NoQueue.Droid.FirestoreDroid))]
 namespace NoQueue.Droid
 {
-    public class FirestoreDroid : Java.Lang.Object, InterfaceDB, IOnCompleteListener
+    public class FirestoreDroid : InterfaceDB
     {
         //public IntPtr Handle => throw new NotImplementedException();
         List<Utente> utenti;
         bool hasReadSubscriptions = false;
+        FirebaseFirestore db;
+        Context context = Android.App.Application.Context;
 
         public FirestoreDroid()
         {
@@ -28,31 +34,30 @@ namespace NoQueue.Droid
         }
 
       
-        public bool InserisciUtente(Utente utente)
+        public  Task<bool> InserisciUtente(string email, string password, string nome, string cognome)
         {
+            
+                HashMap map = new HashMap();
+                map.Put("Nome", nome);
+                map.Put("Cognome", cognome);
+                map.Put("Email", email);
+                map.Put("Password", password);
+
+                GetDatabase();
             try
             {
-                var collection = Firebase.Firestore.FirebaseFirestore.Instance.Collection("utenti");
-                var utentiDocument = new Dictionary<string, Java.Lang.Object>
-            {
-                {"uid", Firebase.Auth.FirebaseAuth.Instance.CurrentUser.Uid},
-                {"cognome", utente.Cognome},
-                {"name", utente.Nome},
-                {"email", utente.Email},
-                {"password", utente.Password}
-            };
-                collection.Add(utentiDocument);
-
-                return true;
+                DocumentReference docRef = db.Collection("new").Document();
+                 docRef.Set(map);
+                return System.Threading.Tasks.Task.FromResult(true);
             }
             catch (Exception ex)
             {
-                return false;
+                return System.Threading.Tasks.Task.FromResult(false);
             }
         }
 
         public async Task<IList<Utente>> ReadUtenti()
-        {
+        {/*
             hasReadSubscriptions = false;
             var collection = Firebase.Firestore.FirebaseFirestore.Instance.Collection("utenti");
             var query = collection.WhereEqualTo("uid", Firebase.Auth.FirebaseAuth.Instance.CurrentUser.Uid);
@@ -64,17 +69,17 @@ namespace NoQueue.Droid
                 if (hasReadSubscriptions)
                     break;
             }
-
+            */
             return utenti;
         }
 
-        public Task<bool> UpdateUtente(Utente utente)
+            public Task<bool> UpdateUtente(Utente utente)
         {
             throw new NotImplementedException();
         }
 
      
-        public void OnComplete(Android.Gms.Tasks.Task task)
+        public void OnComplete(Androi d.Gms.Tasks.Task task)
         {
             if (task.IsSuccessful)
             {
@@ -102,6 +107,55 @@ namespace NoQueue.Droid
                 utenti.Clear();
             }
             hasReadSubscriptions = true;
+        }
+
+        public void GetDatabase()
+        {
+            var app = FirebaseApp.InitializeApp(Android.App.Application.Context);
+            FirebaseFirestore database;
+            if(app == null)
+            {
+                var options = new FirebaseOptions.Builder()
+                .SetProjectId("noqueue-847af")
+                .SetApplicationId("noqueue-847af")
+                .SetApiKey("AIzaSyBWK1vhM6BKN1flO2PGRcTB-p7XR7xT41g")
+                .SetDatabaseUrl("https://noqueue-847af.firebaseio.com")
+                .SetStorageBucket("noqueue-847af.appspot.com")
+                .Build();
+
+                app = FirebaseApp.InitializeApp(Android.App.Application.Context, options);
+                database = FirebaseFirestore.GetInstance(app);
+            }
+            else
+            {
+                database = FirebaseFirestore.GetInstance(app);
+            }
+            db = database;
+
+           /* const string AppName = "SampleAppName";
+
+            var appTest = FirebaseApp.Instance;
+            var options = new FirebaseOptions.Builder()
+                .SetProjectId("noqueue-847af")
+                .SetApplicationId("noqueue-847af")
+                .SetApiKey("AIzaSyBWK1vhM6BKN1flO2PGRcTB-p7XR7xT41g")
+                .SetDatabaseUrl("https://noqueue-847af.firebaseio.com")
+                .SetStorageBucket("noqueue-847af.appspot.com")
+                .Build();
+           var appl = FirebaseApp.InitializeApp(context, options);
+            database = FirebaseFirestore.GetInstance(appTest);*/
+
+
+
+            /*var baseOptions = Firebase.FirebaseOptions.FromResource(context);
+            var options = new Firebase.FirebaseOptions.Builder(baseOptions).SetProjectId("noqueue-847af")
+                .SetApplicationId("noqueue-847af")
+                .SetApiKey("AIzaSyBWK1vhM6BKN1flO2PGRcTB-p7XR7xT41g")
+                .SetDatabaseUrl("https://noqueue-847af.firebaseio.com")
+                .SetStorageBucket("noqueue-847af.appspot.com")
+                .Build();
+            var app = Firebase.FirebaseApp.InitializeApp(context, options, AppName);
+            database = FirebaseFirestore.GetInstance(app);*/
         }
     }
 }

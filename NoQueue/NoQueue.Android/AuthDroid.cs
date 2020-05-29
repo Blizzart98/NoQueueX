@@ -18,14 +18,14 @@ using Firebase;
 using Xamarin.Forms.Xaml;
 using Java.Util;
 using Android.Preferences;
+using NoQueue.Interfaces;
 
 [assembly:Dependency(typeof(NoQueue.Droid.AuthDroid))]
 namespace NoQueue.Droid
 {
     public class AuthDroid : InterfaceAuth
     {
-
-
+       
         public AuthDroid()
         {
 
@@ -44,7 +44,9 @@ namespace NoQueue.Droid
                 ap.saveAccessKey(true);
                 ap.saveAccessEmail(email);
                 ap.saveAccessPass(password);
+                
                 return true;
+
             }
             catch (Exception ex)
             {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NoQueue.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,10 +14,14 @@ namespace NoQueue
     public partial class ProfilePage : ContentPage
     {
         InterfaceAuth auth;
+        InterfaceDB dB;
+       
         public ProfilePage()
         {
             InitializeComponent();
             auth = DependencyService.Get<InterfaceAuth>();
+            dB = DependencyService.Get<InterfaceDB>();
+            
 
         }
 

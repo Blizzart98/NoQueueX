@@ -9,19 +9,15 @@ namespace NoQueue.Interfaces
 {
     public interface InterfaceDB
     {
-         bool InserisciUtente(Utente utente);
+         Task<bool> InserisciUtente(string email, string password, string nome, string cognome);
         Task<bool> UpdateUtente(Utente utente);
         Task<IList<Utente>> ReadUtenti();
+        void GetDatabase();
     }
 
     public class Database
     {
         private static InterfaceDB firestore = DependencyService.Get<InterfaceDB>();
-
-        public static bool InserisciUtente(Utente utente)
-        {
-            return firestore.InserisciUtente(utente);
-        }
 
         public static Task<IList<Utente>> ReadUtenti()
         {
