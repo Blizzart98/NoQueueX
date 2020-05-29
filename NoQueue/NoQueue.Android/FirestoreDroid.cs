@@ -79,7 +79,7 @@ namespace NoQueue.Droid
         }
 
      
-        public void OnComplete(Androi d.Gms.Tasks.Task task)
+        public void OnComplete(Android.Gms.Tasks.Task task)
         {
             if (task.IsSuccessful)
             {
