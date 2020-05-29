@@ -16,13 +16,27 @@ namespace NoQueue
         public ProfilePage()
         {
             InitializeComponent();
+            auth = DependencyService.Get<InterfaceAuth>();
+
         }
 
-        private void ToolbarItem_Clicked(object sender, EventArgs e)
+        public async void ToolbarItem_Clicked(object sender, EventArgs e)
         {
-           
+            bool result = await auth.LogOut();
+            if (result)
+            {
 
+                Navigation.PushAsync(new MainPage());
+                Navigation.RemovePage(this);
+            }
+            else
+            {
+                ShowError();
+            }
         }
+
+
+
         async private void ShowError()
         {
             await DisplayAlert("Logout Failed", "Lol", "OK");

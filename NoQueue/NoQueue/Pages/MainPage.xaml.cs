@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Android.Content;
+using Android.Preferences;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -18,6 +20,12 @@ namespace NoQueue
         {
             InitializeComponent();
             auth = DependencyService.Get<InterfaceAuth>();
+
+            bool firstrun = auth.GetSharedPreferences();
+            if (firstrun)
+            {
+                Btn_signin_Clicked(auth.GetEmail(), auth.GetPass());
+            }
         }
 
         async  void Btn_signin_Clicked(object sender, EventArgs e)
@@ -25,7 +33,24 @@ namespace NoQueue
             bool result = await auth.AuthenticateUser(Entry_email.Text, Entry_Password.Text);
             if (result)
             {
-                await Navigation.PushAsync(new ProfilePage());
+                
+                Navigation.PushAsync(new ProfilePage());
+                Navigation.RemovePage(this);
+            }
+            else
+            {
+                ShowError();
+            }
+
+        }
+
+        async void Btn_signin_Clicked(string a, string b)
+        {
+            bool result = await auth.AuthenticateUser(a, b);
+            if (result)
+            {
+
+                Navigation.PushAsync(new ProfilePage());
                 Navigation.RemovePage(this);
             }
             else

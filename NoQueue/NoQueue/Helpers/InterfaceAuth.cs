@@ -9,11 +9,17 @@ namespace NoQueue
    public interface InterfaceAuth
     {
         Task<bool> AuthenticateUser(string email, string password);
-       
+
         Task<bool> RegisterUser(string email, string password);
 
         bool IsAuthenticated();
         string GetCurrentUserId();
+        bool GetSharedPreferences();
+
+        string GetEmail();
+        string GetPass();
+
+        Task<bool> LogOut();
     }
 
     public class Auth
@@ -55,6 +61,11 @@ namespace NoQueue
         public static string GetCurrentUserId()
         {
             return auth.GetCurrentUserId();
+        }
+
+        public static bool GetSharedPreferences()
+        {
+            return auth.GetSharedPreferences();
         }
     }
 }
