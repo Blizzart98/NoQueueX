@@ -24,11 +24,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Pages\AddPage.xaml.cs">
-      <DependentUpon>AddPage.xaml</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Update="Pages\AddPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
