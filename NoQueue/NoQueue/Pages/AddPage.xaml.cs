@@ -10,17 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace NoQueue.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class AddPage : ContentPage
+    public partial class Page1 : ContentPage
     {
-        public AddPage()
+        public Page1()
         {
             InitializeComponent();
         }
-       
-
-        private void PickerSelectedIndexChanged += (sender, args) =>
-        {
-	        pageValue.Text = picker.Items[picker.SelectedIndex];
-        };
-
+    }
 }

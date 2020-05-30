@@ -1,4 +1,5 @@
-﻿
+﻿using Android.Content;
+using Android.Preferences;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

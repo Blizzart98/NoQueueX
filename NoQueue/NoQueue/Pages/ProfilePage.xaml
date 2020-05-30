@@ -17,13 +17,13 @@
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text=""
-                     Clicked="ToolbarItem_Clicked"
+                     Clicked="ToolbarItem_ClickedAdd"
                  IconImageSource="icon_logout.png"
                  Order="Primary"
                  Priority="1" />
         <ToolbarItem Text=""
-                     Clicked="ToolbarItem_ClickedAdd"
-                     IconImageSource="icon_add.png"
+                     Clicked="ToolbarItem_Clicked"
+                 IconImageSource="icon_add.png"
                  Order="Primary"
                  Priority="0" />
     </ContentPage.ToolbarItems>

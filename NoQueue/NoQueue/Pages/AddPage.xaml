@@ -4,20 +4,19 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="NoQueue.Pages.AddPage">
+             x:Class="NoQueue.Pages.Page1">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout 
+        TranslationY="10"
+        Padding="20">
+            <!-- Place new controls here -->
+            <Image Source="@drawable/ic_launcher_round"/>
+            <Label Text="Aggiungi Prenotazione" 
+               FontSize="Title" 
+               TextColor="Black" 
+               HorizontalTextAlignment="Center"/>
             
-            <Picker 
-	            x:Name="CityPicker" 
-	            Title="City" 	
-                SelectedIndexChanged="SelectedIndexChanged">
-                <Picker.Items>
-                    <x:String>Camerano</x:String>
-                    <x:String>Cupramontana</x:String>
-                </Picker.Items>
-            </Picker>
-
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

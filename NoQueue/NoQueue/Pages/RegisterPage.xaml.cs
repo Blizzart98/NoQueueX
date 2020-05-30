@@ -6,6 +6,7 @@ using Xamarin.Forms.Xaml;
 
 using System.Collections.Generic;
 using System.Linq;
+using Java.Util;
 using Plugin.CloudFirestore;
 using NoQueue.Entities;
 

@@ -1,5 +1,4 @@
-﻿using NoQueue.Pages;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -39,8 +38,8 @@ namespace NoQueue
         }
         public async void ToolbarItem_ClickedAdd(object sender, EventArgs e)
         { 
-                Navigation.PushAsync(new AddPage());
-                //Navigation.RemovePage(this);
+                await Navigation.PushAsync(new AddPage());
+                Navigation.RemovePage(this);
         }
 
         async private void ShowError()
