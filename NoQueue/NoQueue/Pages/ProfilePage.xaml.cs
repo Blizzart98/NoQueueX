@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NoQueue.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,7 +19,8 @@ namespace NoQueue
         {
             InitializeComponent();
             auth = DependencyService.Get<InterfaceAuth>();
-            
+            string nome = auth.GetNome().ToString();
+            txtUser.Text = "Hello " + nome;
 
         }
 
@@ -38,7 +40,7 @@ namespace NoQueue
         }
         public async void ToolbarItem_ClickedAdd(object sender, EventArgs e)
         { 
-                await Navigation.PushAsync(new AddPage());
+                Navigation.PushAsync(new AddPage());
                 Navigation.RemovePage(this);
         }
 

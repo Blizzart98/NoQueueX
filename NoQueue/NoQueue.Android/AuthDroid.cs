@@ -58,6 +58,11 @@ namespace NoQueue.Droid
             return Firebase.Auth.FirebaseAuth.Instance.CurrentUser.Uid;
         }
 
+        public string GetNome()
+        {
+            return Firebase.Auth.FirebaseAuth.Instance.CurrentUser.DisplayName;
+        }
+
         public bool GetSharedPreferences()
         {
             Context mContext = Android.App.Application.Context;

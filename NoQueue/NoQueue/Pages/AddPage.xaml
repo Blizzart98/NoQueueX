@@ -6,10 +6,33 @@
              mc:Ignorable="d"
              x:Class="NoQueue.Pages.AddPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout
+            Padding="20">
+
+            <Label Text="Scegli città:"
+                   FontSize="Title"/>
+            <Picker 
+	            x:Name="CityPicker" 
+	            Title="Cities" 	
+                SelectedIndexChanged="PickerSelectedIndexChanged"
+                VerticalOptions="Center">
+                <Picker.Items>
+                    <x:String>Camerano</x:String>
+                    <x:String>Cupramontana</x:String>
+                </Picker.Items>
+            </Picker>
+
+
+            <Label Text="Scegli la data:"
+                   FontSize="Title"/>
+            <DatePicker 
+	            x:Name="DatePicker" 
+	            Format="D"
+ 	            VerticalOptions="Center" 	
+                DateSelected="DatePickerDateSelected">
+            </DatePicker>
+
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

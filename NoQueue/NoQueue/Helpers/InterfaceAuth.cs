@@ -14,6 +14,8 @@ namespace NoQueue
 
         bool IsAuthenticated();
         string GetCurrentUserId();
+
+        string GetNome();
         bool GetSharedPreferences();
 
         string GetEmail();
@@ -61,6 +63,11 @@ namespace NoQueue
         public static string GetCurrentUserId()
         {
             return auth.GetCurrentUserId();
+        }
+
+        public static string GetNome()
+        {
+            return auth.GetNome();
         }
 
         public static bool GetSharedPreferences()
