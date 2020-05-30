@@ -7,7 +7,15 @@
              x:Class="NoQueue.Pages.AddPage">
     <ContentPage.Content>
         <StackLayout
+            TranslationY="10"
             Padding="20">
+            <!-- Place new controls here -->
+            <Image Source="@drawable/ic_launcher_round"/>
+            <Label Text="Aggiungi prenotazione"
+                   Margin="15"
+               FontSize="Title" 
+               TextColor="Black" 
+               HorizontalTextAlignment="Center"/>
 
             <Label Text="Scegli città:"
                    FontSize="Title"/>
@@ -20,8 +28,8 @@
                     <x:String>Camerano</x:String>
                     <x:String>Cupramontana</x:String>
                 </Picker.Items>
-            </Picker>
-
+            </Picker> 
+            
 
             <Label Text="Scegli la data:"
                    FontSize="Title"/>
