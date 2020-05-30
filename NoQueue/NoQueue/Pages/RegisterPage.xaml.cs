@@ -7,7 +7,8 @@ using Xamarin.Forms.Xaml;
 using System.Collections.Generic;
 using System.Linq;
 using Java.Util;
-using NoQueue.Interfaces;
+using Plugin.CloudFirestore;
+using NoQueue.Entities;
 
 namespace NoQueue
 {
@@ -15,13 +16,11 @@ namespace NoQueue
     public partial class RegisterPage : ContentPage
     {
         InterfaceAuth auth;
-        InterfaceDB db;
         
 
         public RegisterPage()
         {
             InitializeComponent();       
-            db = DependencyService.Get<InterfaceDB>();
             auth = DependencyService.Get<InterfaceAuth>();
      
         }
@@ -35,8 +34,15 @@ namespace NoQueue
             }
 
             bool created = await auth.RegisterUser(Entry_email.Text, Entry_Password.Text);
-            bool added =  await db.InserisciUtente(Entry_email.Text, Entry_Password.Text, Entry_name.Text, Entry_surname.Text);
-            if (created && added)
+            Utente user = new Utente(Entry_name.Text, Entry_surname.Text, Entry_email.Text, Entry_Password.Text);
+            await CrossCloudFirestore.Current
+                         .Instance
+                         .GetCollection("utenti")
+                         .GetDocument(Entry_email.Text)
+                         .GetCollection("Info")
+                         .CreateDocument()
+                         .SetDataAsync(user);
+            if (created)
             {
                 await DisplayAlert("Success", "Welcome to our system. Log in to have full access", "OK");
                 await Navigation.PushAsync(new ProfilePage());

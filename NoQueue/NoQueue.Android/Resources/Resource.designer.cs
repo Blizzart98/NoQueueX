@@ -25,6 +25,274 @@ namespace NoQueue.Droid
 		
 		public static void UpdateIdValues()
 		{
+			global::Plugin.CloudFirestore.Resource.Attribute.alpha = global::NoQueue.Droid.Resource.Attribute.alpha;
+			global::Plugin.CloudFirestore.Resource.Attribute.buttonSize = global::NoQueue.Droid.Resource.Attribute.buttonSize;
+			global::Plugin.CloudFirestore.Resource.Attribute.circleCrop = global::NoQueue.Droid.Resource.Attribute.circleCrop;
+			global::Plugin.CloudFirestore.Resource.Attribute.colorScheme = global::NoQueue.Droid.Resource.Attribute.colorScheme;
+			global::Plugin.CloudFirestore.Resource.Attribute.coordinatorLayoutStyle = global::NoQueue.Droid.Resource.Attribute.coordinatorLayoutStyle;
+			global::Plugin.CloudFirestore.Resource.Attribute.font = global::NoQueue.Droid.Resource.Attribute.font;
+			global::Plugin.CloudFirestore.Resource.Attribute.fontProviderAuthority = global::NoQueue.Droid.Resource.Attribute.fontProviderAuthority;
+			global::Plugin.CloudFirestore.Resource.Attribute.fontProviderCerts = global::NoQueue.Droid.Resource.Attribute.fontProviderCerts;
+			global::Plugin.CloudFirestore.Resource.Attribute.fontProviderFetchStrategy = global::NoQueue.Droid.Resource.Attribute.fontProviderFetchStrategy;
+			global::Plugin.CloudFirestore.Resource.Attribute.fontProviderFetchTimeout = global::NoQueue.Droid.Resource.Attribute.fontProviderFetchTimeout;
+			global::Plugin.CloudFirestore.Resource.Attribute.fontProviderPackage = global::NoQueue.Droid.Resource.Attribute.fontProviderPackage;
+			global::Plugin.CloudFirestore.Resource.Attribute.fontProviderQuery = global::NoQueue.Droid.Resource.Attribute.fontProviderQuery;
+			global::Plugin.CloudFirestore.Resource.Attribute.fontStyle = global::NoQueue.Droid.Resource.Attribute.fontStyle;
+			global::Plugin.CloudFirestore.Resource.Attribute.fontVariationSettings = global::NoQueue.Droid.Resource.Attribute.fontVariationSettings;
+			global::Plugin.CloudFirestore.Resource.Attribute.fontWeight = global::NoQueue.Droid.Resource.Attribute.fontWeight;
+			global::Plugin.CloudFirestore.Resource.Attribute.imageAspectRatio = global::NoQueue.Droid.Resource.Attribute.imageAspectRatio;
+			global::Plugin.CloudFirestore.Resource.Attribute.imageAspectRatioAdjust = global::NoQueue.Droid.Resource.Attribute.imageAspectRatioAdjust;
+			global::Plugin.CloudFirestore.Resource.Attribute.keylines = global::NoQueue.Droid.Resource.Attribute.keylines;
+			global::Plugin.CloudFirestore.Resource.Attribute.layout_anchor = global::NoQueue.Droid.Resource.Attribute.layout_anchor;
+			global::Plugin.CloudFirestore.Resource.Attribute.layout_anchorGravity = global::NoQueue.Droid.Resource.Attribute.layout_anchorGravity;
+			global::Plugin.CloudFirestore.Resource.Attribute.layout_behavior = global::NoQueue.Droid.Resource.Attribute.layout_behavior;
+			global::Plugin.CloudFirestore.Resource.Attribute.layout_dodgeInsetEdges = global::NoQueue.Droid.Resource.Attribute.layout_dodgeInsetEdges;
+			global::Plugin.CloudFirestore.Resource.Attribute.layout_insetEdge = global::NoQueue.Droid.Resource.Attribute.layout_insetEdge;
+			global::Plugin.CloudFirestore.Resource.Attribute.layout_keyline = global::NoQueue.Droid.Resource.Attribute.layout_keyline;
+			global::Plugin.CloudFirestore.Resource.Attribute.scopeUris = global::NoQueue.Droid.Resource.Attribute.scopeUris;
+			global::Plugin.CloudFirestore.Resource.Attribute.statusBarBackground = global::NoQueue.Droid.Resource.Attribute.statusBarBackground;
+			global::Plugin.CloudFirestore.Resource.Attribute.ttcIndex = global::NoQueue.Droid.Resource.Attribute.ttcIndex;
+			global::Plugin.CloudFirestore.Resource.Color.common_google_signin_btn_text_dark = global::NoQueue.Droid.Resource.Color.common_google_signin_btn_text_dark;
+			global::Plugin.CloudFirestore.Resource.Color.common_google_signin_btn_text_dark_default = global::NoQueue.Droid.Resource.Color.common_google_signin_btn_text_dark_default;
+			global::Plugin.CloudFirestore.Resource.Color.common_google_signin_btn_text_dark_disabled = global::NoQueue.Droid.Resource.Color.common_google_signin_btn_text_dark_disabled;
+			global::Plugin.CloudFirestore.Resource.Color.common_google_signin_btn_text_dark_focused = global::NoQueue.Droid.Resource.Color.common_google_signin_btn_text_dark_focused;
+			global::Plugin.CloudFirestore.Resource.Color.common_google_signin_btn_text_dark_pressed = global::NoQueue.Droid.Resource.Color.common_google_signin_btn_text_dark_pressed;
+			global::Plugin.CloudFirestore.Resource.Color.common_google_signin_btn_text_light = global::NoQueue.Droid.Resource.Color.common_google_signin_btn_text_light;
+			global::Plugin.CloudFirestore.Resource.Color.common_google_signin_btn_text_light_default = global::NoQueue.Droid.Resource.Color.common_google_signin_btn_text_light_default;
+			global::Plugin.CloudFirestore.Resource.Color.common_google_signin_btn_text_light_disabled = global::NoQueue.Droid.Resource.Color.common_google_signin_btn_text_light_disabled;
+			global::Plugin.CloudFirestore.Resource.Color.common_google_signin_btn_text_light_focused = global::NoQueue.Droid.Resource.Color.common_google_signin_btn_text_light_focused;
+			global::Plugin.CloudFirestore.Resource.Color.common_google_signin_btn_text_light_pressed = global::NoQueue.Droid.Resource.Color.common_google_signin_btn_text_light_pressed;
+			global::Plugin.CloudFirestore.Resource.Color.common_google_signin_btn_tint = global::NoQueue.Droid.Resource.Color.common_google_signin_btn_tint;
+			global::Plugin.CloudFirestore.Resource.Color.notification_action_color_filter = global::NoQueue.Droid.Resource.Color.notification_action_color_filter;
+			global::Plugin.CloudFirestore.Resource.Color.notification_icon_bg_color = global::NoQueue.Droid.Resource.Color.notification_icon_bg_color;
+			global::Plugin.CloudFirestore.Resource.Color.notification_material_background_media_default_color = global::NoQueue.Droid.Resource.Color.notification_material_background_media_default_color;
+			global::Plugin.CloudFirestore.Resource.Color.primary_text_default_material_dark = global::NoQueue.Droid.Resource.Color.primary_text_default_material_dark;
+			global::Plugin.CloudFirestore.Resource.Color.ripple_material_light = global::NoQueue.Droid.Resource.Color.ripple_material_light;
+			global::Plugin.CloudFirestore.Resource.Color.secondary_text_default_material_dark = global::NoQueue.Droid.Resource.Color.secondary_text_default_material_dark;
+			global::Plugin.CloudFirestore.Resource.Color.secondary_text_default_material_light = global::NoQueue.Droid.Resource.Color.secondary_text_default_material_light;
+			global::Plugin.CloudFirestore.Resource.Dimension.compat_button_inset_horizontal_material = global::NoQueue.Droid.Resource.Dimension.compat_button_inset_horizontal_material;
+			global::Plugin.CloudFirestore.Resource.Dimension.compat_button_inset_vertical_material = global::NoQueue.Droid.Resource.Dimension.compat_button_inset_vertical_material;
+			global::Plugin.CloudFirestore.Resource.Dimension.compat_button_padding_horizontal_material = global::NoQueue.Droid.Resource.Dimension.compat_button_padding_horizontal_material;
+			global::Plugin.CloudFirestore.Resource.Dimension.compat_button_padding_vertical_material = global::NoQueue.Droid.Resource.Dimension.compat_button_padding_vertical_material;
+			global::Plugin.CloudFirestore.Resource.Dimension.compat_control_corner_material = global::NoQueue.Droid.Resource.Dimension.compat_control_corner_material;
+			global::Plugin.CloudFirestore.Resource.Dimension.compat_notification_large_icon_max_height = global::NoQueue.Droid.Resource.Dimension.compat_notification_large_icon_max_height;
+			global::Plugin.CloudFirestore.Resource.Dimension.compat_notification_large_icon_max_width = global::NoQueue.Droid.Resource.Dimension.compat_notification_large_icon_max_width;
+			global::Plugin.CloudFirestore.Resource.Dimension.notification_action_icon_size = global::NoQueue.Droid.Resource.Dimension.notification_action_icon_size;
+			global::Plugin.CloudFirestore.Resource.Dimension.notification_action_text_size = global::NoQueue.Droid.Resource.Dimension.notification_action_text_size;
+			global::Plugin.CloudFirestore.Resource.Dimension.notification_big_circle_margin = global::NoQueue.Droid.Resource.Dimension.notification_big_circle_margin;
+			global::Plugin.CloudFirestore.Resource.Dimension.notification_content_margin_start = global::NoQueue.Droid.Resource.Dimension.notification_content_margin_start;
+			global::Plugin.CloudFirestore.Resource.Dimension.notification_large_icon_height = global::NoQueue.Droid.Resource.Dimension.notification_large_icon_height;
+			global::Plugin.CloudFirestore.Resource.Dimension.notification_large_icon_width = global::NoQueue.Droid.Resource.Dimension.notification_large_icon_width;
+			global::Plugin.CloudFirestore.Resource.Dimension.notification_main_column_padding_top = global::NoQueue.Droid.Resource.Dimension.notification_main_column_padding_top;
+			global::Plugin.CloudFirestore.Resource.Dimension.notification_media_narrow_margin = global::NoQueue.Droid.Resource.Dimension.notification_media_narrow_margin;
+			global::Plugin.CloudFirestore.Resource.Dimension.notification_right_icon_size = global::NoQueue.Droid.Resource.Dimension.notification_right_icon_size;
+			global::Plugin.CloudFirestore.Resource.Dimension.notification_right_side_padding_top = global::NoQueue.Droid.Resource.Dimension.notification_right_side_padding_top;
+			global::Plugin.CloudFirestore.Resource.Dimension.notification_small_icon_background_padding = global::NoQueue.Droid.Resource.Dimension.notification_small_icon_background_padding;
+			global::Plugin.CloudFirestore.Resource.Dimension.notification_small_icon_size_as_large = global::NoQueue.Droid.Resource.Dimension.notification_small_icon_size_as_large;
+			global::Plugin.CloudFirestore.Resource.Dimension.notification_subtext_size = global::NoQueue.Droid.Resource.Dimension.notification_subtext_size;
+			global::Plugin.CloudFirestore.Resource.Dimension.notification_top_pad = global::NoQueue.Droid.Resource.Dimension.notification_top_pad;
+			global::Plugin.CloudFirestore.Resource.Dimension.notification_top_pad_large_text = global::NoQueue.Droid.Resource.Dimension.notification_top_pad_large_text;
+			global::Plugin.CloudFirestore.Resource.Dimension.subtitle_corner_radius = global::NoQueue.Droid.Resource.Dimension.subtitle_corner_radius;
+			global::Plugin.CloudFirestore.Resource.Dimension.subtitle_outline_width = global::NoQueue.Droid.Resource.Dimension.subtitle_outline_width;
+			global::Plugin.CloudFirestore.Resource.Dimension.subtitle_shadow_offset = global::NoQueue.Droid.Resource.Dimension.subtitle_shadow_offset;
+			global::Plugin.CloudFirestore.Resource.Dimension.subtitle_shadow_radius = global::NoQueue.Droid.Resource.Dimension.subtitle_shadow_radius;
+			global::Plugin.CloudFirestore.Resource.Drawable.common_full_open_on_phone = global::NoQueue.Droid.Resource.Drawable.common_full_open_on_phone;
+			global::Plugin.CloudFirestore.Resource.Drawable.common_google_signin_btn_icon_dark = global::NoQueue.Droid.Resource.Drawable.common_google_signin_btn_icon_dark;
+			global::Plugin.CloudFirestore.Resource.Drawable.common_google_signin_btn_icon_dark_focused = global::NoQueue.Droid.Resource.Drawable.common_google_signin_btn_icon_dark_focused;
+			global::Plugin.CloudFirestore.Resource.Drawable.common_google_signin_btn_icon_dark_normal = global::NoQueue.Droid.Resource.Drawable.common_google_signin_btn_icon_dark_normal;
+			global::Plugin.CloudFirestore.Resource.Drawable.common_google_signin_btn_icon_dark_normal_background = global::NoQueue.Droid.Resource.Drawable.common_google_signin_btn_icon_dark_normal_background;
+			global::Plugin.CloudFirestore.Resource.Drawable.common_google_signin_btn_icon_disabled = global::NoQueue.Droid.Resource.Drawable.common_google_signin_btn_icon_disabled;
+			global::Plugin.CloudFirestore.Resource.Drawable.common_google_signin_btn_icon_light = global::NoQueue.Droid.Resource.Drawable.common_google_signin_btn_icon_light;
+			global::Plugin.CloudFirestore.Resource.Drawable.common_google_signin_btn_icon_light_focused = global::NoQueue.Droid.Resource.Drawable.common_google_signin_btn_icon_light_focused;
+			global::Plugin.CloudFirestore.Resource.Drawable.common_google_signin_btn_icon_light_normal = global::NoQueue.Droid.Resource.Drawable.common_google_signin_btn_icon_light_normal;
+			global::Plugin.CloudFirestore.Resource.Drawable.common_google_signin_btn_icon_light_normal_background = global::NoQueue.Droid.Resource.Drawable.common_google_signin_btn_icon_light_normal_background;
+			global::Plugin.CloudFirestore.Resource.Drawable.common_google_signin_btn_text_dark = global::NoQueue.Droid.Resource.Drawable.common_google_signin_btn_text_dark;
+			global::Plugin.CloudFirestore.Resource.Drawable.common_google_signin_btn_text_dark_focused = global::NoQueue.Droid.Resource.Drawable.common_google_signin_btn_text_dark_focused;
+			global::Plugin.CloudFirestore.Resource.Drawable.common_google_signin_btn_text_dark_normal = global::NoQueue.Droid.Resource.Drawable.common_google_signin_btn_text_dark_normal;
+			global::Plugin.CloudFirestore.Resource.Drawable.common_google_signin_btn_text_dark_normal_background = global::NoQueue.Droid.Resource.Drawable.common_google_signin_btn_text_dark_normal_background;
+			global::Plugin.CloudFirestore.Resource.Drawable.common_google_signin_btn_text_disabled = global::NoQueue.Droid.Resource.Drawable.common_google_signin_btn_text_disabled;
+			global::Plugin.CloudFirestore.Resource.Drawable.common_google_signin_btn_text_light = global::NoQueue.Droid.Resource.Drawable.common_google_signin_btn_text_light;
+			global::Plugin.CloudFirestore.Resource.Drawable.common_google_signin_btn_text_light_focused = global::NoQueue.Droid.Resource.Drawable.common_google_signin_btn_text_light_focused;
+			global::Plugin.CloudFirestore.Resource.Drawable.common_google_signin_btn_text_light_normal = global::NoQueue.Droid.Resource.Drawable.common_google_signin_btn_text_light_normal;
+			global::Plugin.CloudFirestore.Resource.Drawable.common_google_signin_btn_text_light_normal_background = global::NoQueue.Droid.Resource.Drawable.common_google_signin_btn_text_light_normal_background;
+			global::Plugin.CloudFirestore.Resource.Drawable.googleg_disabled_color_18 = global::NoQueue.Droid.Resource.Drawable.googleg_disabled_color_18;
+			global::Plugin.CloudFirestore.Resource.Drawable.googleg_standard_color_18 = global::NoQueue.Droid.Resource.Drawable.googleg_standard_color_18;
+			global::Plugin.CloudFirestore.Resource.Drawable.notification_action_background = global::NoQueue.Droid.Resource.Drawable.notification_action_background;
+			global::Plugin.CloudFirestore.Resource.Drawable.notification_bg = global::NoQueue.Droid.Resource.Drawable.notification_bg;
+			global::Plugin.CloudFirestore.Resource.Drawable.notification_bg_low = global::NoQueue.Droid.Resource.Drawable.notification_bg_low;
+			global::Plugin.CloudFirestore.Resource.Drawable.notification_bg_low_normal = global::NoQueue.Droid.Resource.Drawable.notification_bg_low_normal;
+			global::Plugin.CloudFirestore.Resource.Drawable.notification_bg_low_pressed = global::NoQueue.Droid.Resource.Drawable.notification_bg_low_pressed;
+			global::Plugin.CloudFirestore.Resource.Drawable.notification_bg_normal = global::NoQueue.Droid.Resource.Drawable.notification_bg_normal;
+			global::Plugin.CloudFirestore.Resource.Drawable.notification_bg_normal_pressed = global::NoQueue.Droid.Resource.Drawable.notification_bg_normal_pressed;
+			global::Plugin.CloudFirestore.Resource.Drawable.notification_icon_background = global::NoQueue.Droid.Resource.Drawable.notification_icon_background;
+			global::Plugin.CloudFirestore.Resource.Drawable.notification_template_icon_bg = global::NoQueue.Droid.Resource.Drawable.notification_template_icon_bg;
+			global::Plugin.CloudFirestore.Resource.Drawable.notification_template_icon_low_bg = global::NoQueue.Droid.Resource.Drawable.notification_template_icon_low_bg;
+			global::Plugin.CloudFirestore.Resource.Drawable.notification_tile_bg = global::NoQueue.Droid.Resource.Drawable.notification_tile_bg;
+			global::Plugin.CloudFirestore.Resource.Drawable.notify_panel_notification_icon_bg = global::NoQueue.Droid.Resource.Drawable.notify_panel_notification_icon_bg;
+			global::Plugin.CloudFirestore.Resource.Id.action0 = global::NoQueue.Droid.Resource.Id.action0;
+			global::Plugin.CloudFirestore.Resource.Id.actions = global::NoQueue.Droid.Resource.Id.actions;
+			global::Plugin.CloudFirestore.Resource.Id.action_container = global::NoQueue.Droid.Resource.Id.action_container;
+			global::Plugin.CloudFirestore.Resource.Id.action_divider = global::NoQueue.Droid.Resource.Id.action_divider;
+			global::Plugin.CloudFirestore.Resource.Id.action_image = global::NoQueue.Droid.Resource.Id.action_image;
+			global::Plugin.CloudFirestore.Resource.Id.action_text = global::NoQueue.Droid.Resource.Id.action_text;
+			global::Plugin.CloudFirestore.Resource.Id.adjust_height = global::NoQueue.Droid.Resource.Id.adjust_height;
+			global::Plugin.CloudFirestore.Resource.Id.adjust_width = global::NoQueue.Droid.Resource.Id.adjust_width;
+			global::Plugin.CloudFirestore.Resource.Id.all = global::NoQueue.Droid.Resource.Id.all;
+			global::Plugin.CloudFirestore.Resource.Id.async = global::NoQueue.Droid.Resource.Id.async;
+			global::Plugin.CloudFirestore.Resource.Id.auto = global::NoQueue.Droid.Resource.Id.auto;
+			global::Plugin.CloudFirestore.Resource.Id.blocking = global::NoQueue.Droid.Resource.Id.blocking;
+			global::Plugin.CloudFirestore.Resource.Id.bottom = global::NoQueue.Droid.Resource.Id.bottom;
+			global::Plugin.CloudFirestore.Resource.Id.cancel_action = global::NoQueue.Droid.Resource.Id.cancel_action;
+			global::Plugin.CloudFirestore.Resource.Id.center = global::NoQueue.Droid.Resource.Id.center;
+			global::Plugin.CloudFirestore.Resource.Id.center_horizontal = global::NoQueue.Droid.Resource.Id.center_horizontal;
+			global::Plugin.CloudFirestore.Resource.Id.center_vertical = global::NoQueue.Droid.Resource.Id.center_vertical;
+			global::Plugin.CloudFirestore.Resource.Id.chronometer = global::NoQueue.Droid.Resource.Id.chronometer;
+			global::Plugin.CloudFirestore.Resource.Id.clip_horizontal = global::NoQueue.Droid.Resource.Id.clip_horizontal;
+			global::Plugin.CloudFirestore.Resource.Id.clip_vertical = global::NoQueue.Droid.Resource.Id.clip_vertical;
+			global::Plugin.CloudFirestore.Resource.Id.dark = global::NoQueue.Droid.Resource.Id.dark;
+			global::Plugin.CloudFirestore.Resource.Id.end = global::NoQueue.Droid.Resource.Id.end;
+			global::Plugin.CloudFirestore.Resource.Id.end_padder = global::NoQueue.Droid.Resource.Id.end_padder;
+			global::Plugin.CloudFirestore.Resource.Id.fill = global::NoQueue.Droid.Resource.Id.fill;
+			global::Plugin.CloudFirestore.Resource.Id.fill_horizontal = global::NoQueue.Droid.Resource.Id.fill_horizontal;
+			global::Plugin.CloudFirestore.Resource.Id.fill_vertical = global::NoQueue.Droid.Resource.Id.fill_vertical;
+			global::Plugin.CloudFirestore.Resource.Id.forever = global::NoQueue.Droid.Resource.Id.forever;
+			global::Plugin.CloudFirestore.Resource.Id.icon = global::NoQueue.Droid.Resource.Id.icon;
+			global::Plugin.CloudFirestore.Resource.Id.icon_group = global::NoQueue.Droid.Resource.Id.icon_group;
+			global::Plugin.CloudFirestore.Resource.Id.icon_only = global::NoQueue.Droid.Resource.Id.icon_only;
+			global::Plugin.CloudFirestore.Resource.Id.info = global::NoQueue.Droid.Resource.Id.info;
+			global::Plugin.CloudFirestore.Resource.Id.italic = global::NoQueue.Droid.Resource.Id.italic;
+			global::Plugin.CloudFirestore.Resource.Id.left = global::NoQueue.Droid.Resource.Id.left;
+			global::Plugin.CloudFirestore.Resource.Id.light = global::NoQueue.Droid.Resource.Id.light;
+			global::Plugin.CloudFirestore.Resource.Id.line1 = global::NoQueue.Droid.Resource.Id.line1;
+			global::Plugin.CloudFirestore.Resource.Id.line3 = global::NoQueue.Droid.Resource.Id.line3;
+			global::Plugin.CloudFirestore.Resource.Id.media_actions = global::NoQueue.Droid.Resource.Id.media_actions;
+			global::Plugin.CloudFirestore.Resource.Id.none = global::NoQueue.Droid.Resource.Id.none;
+			global::Plugin.CloudFirestore.Resource.Id.normal = global::NoQueue.Droid.Resource.Id.normal;
+			global::Plugin.CloudFirestore.Resource.Id.notification_background = global::NoQueue.Droid.Resource.Id.notification_background;
+			global::Plugin.CloudFirestore.Resource.Id.notification_main_column = global::NoQueue.Droid.Resource.Id.notification_main_column;
+			global::Plugin.CloudFirestore.Resource.Id.notification_main_column_container = global::NoQueue.Droid.Resource.Id.notification_main_column_container;
+			global::Plugin.CloudFirestore.Resource.Id.right = global::NoQueue.Droid.Resource.Id.right;
+			global::Plugin.CloudFirestore.Resource.Id.right_icon = global::NoQueue.Droid.Resource.Id.right_icon;
+			global::Plugin.CloudFirestore.Resource.Id.right_side = global::NoQueue.Droid.Resource.Id.right_side;
+			global::Plugin.CloudFirestore.Resource.Id.standard = global::NoQueue.Droid.Resource.Id.standard;
+			global::Plugin.CloudFirestore.Resource.Id.start = global::NoQueue.Droid.Resource.Id.start;
+			global::Plugin.CloudFirestore.Resource.Id.status_bar_latest_event_content = global::NoQueue.Droid.Resource.Id.status_bar_latest_event_content;
+			global::Plugin.CloudFirestore.Resource.Id.tag_transition_group = global::NoQueue.Droid.Resource.Id.tag_transition_group;
+			global::Plugin.CloudFirestore.Resource.Id.tag_unhandled_key_event_manager = global::NoQueue.Droid.Resource.Id.tag_unhandled_key_event_manager;
+			global::Plugin.CloudFirestore.Resource.Id.tag_unhandled_key_listeners = global::NoQueue.Droid.Resource.Id.tag_unhandled_key_listeners;
+			global::Plugin.CloudFirestore.Resource.Id.text = global::NoQueue.Droid.Resource.Id.text;
+			global::Plugin.CloudFirestore.Resource.Id.text2 = global::NoQueue.Droid.Resource.Id.text2;
+			global::Plugin.CloudFirestore.Resource.Id.time = global::NoQueue.Droid.Resource.Id.time;
+			global::Plugin.CloudFirestore.Resource.Id.title = global::NoQueue.Droid.Resource.Id.title;
+			global::Plugin.CloudFirestore.Resource.Id.top = global::NoQueue.Droid.Resource.Id.top;
+			global::Plugin.CloudFirestore.Resource.Id.wide = global::NoQueue.Droid.Resource.Id.wide;
+			global::Plugin.CloudFirestore.Resource.Integer.cancel_button_image_alpha = global::NoQueue.Droid.Resource.Integer.cancel_button_image_alpha;
+			global::Plugin.CloudFirestore.Resource.Integer.google_play_services_version = global::NoQueue.Droid.Resource.Integer.google_play_services_version;
+			global::Plugin.CloudFirestore.Resource.Integer.status_bar_notification_info_maxnum = global::NoQueue.Droid.Resource.Integer.status_bar_notification_info_maxnum;
+			global::Plugin.CloudFirestore.Resource.Layout.notification_action = global::NoQueue.Droid.Resource.Layout.notification_action;
+			global::Plugin.CloudFirestore.Resource.Layout.notification_action_tombstone = global::NoQueue.Droid.Resource.Layout.notification_action_tombstone;
+			global::Plugin.CloudFirestore.Resource.Layout.notification_media_action = global::NoQueue.Droid.Resource.Layout.notification_media_action;
+			global::Plugin.CloudFirestore.Resource.Layout.notification_media_cancel_action = global::NoQueue.Droid.Resource.Layout.notification_media_cancel_action;
+			global::Plugin.CloudFirestore.Resource.Layout.notification_template_big_media = global::NoQueue.Droid.Resource.Layout.notification_template_big_media;
+			global::Plugin.CloudFirestore.Resource.Layout.notification_template_big_media_custom = global::NoQueue.Droid.Resource.Layout.notification_template_big_media_custom;
+			global::Plugin.CloudFirestore.Resource.Layout.notification_template_big_media_narrow = global::NoQueue.Droid.Resource.Layout.notification_template_big_media_narrow;
+			global::Plugin.CloudFirestore.Resource.Layout.notification_template_big_media_narrow_custom = global::NoQueue.Droid.Resource.Layout.notification_template_big_media_narrow_custom;
+			global::Plugin.CloudFirestore.Resource.Layout.notification_template_custom_big = global::NoQueue.Droid.Resource.Layout.notification_template_custom_big;
+			global::Plugin.CloudFirestore.Resource.Layout.notification_template_icon_group = global::NoQueue.Droid.Resource.Layout.notification_template_icon_group;
+			global::Plugin.CloudFirestore.Resource.Layout.notification_template_lines_media = global::NoQueue.Droid.Resource.Layout.notification_template_lines_media;
+			global::Plugin.CloudFirestore.Resource.Layout.notification_template_media = global::NoQueue.Droid.Resource.Layout.notification_template_media;
+			global::Plugin.CloudFirestore.Resource.Layout.notification_template_media_custom = global::NoQueue.Droid.Resource.Layout.notification_template_media_custom;
+			global::Plugin.CloudFirestore.Resource.Layout.notification_template_part_chronometer = global::NoQueue.Droid.Resource.Layout.notification_template_part_chronometer;
+			global::Plugin.CloudFirestore.Resource.Layout.notification_template_part_time = global::NoQueue.Droid.Resource.Layout.notification_template_part_time;
+			global::Plugin.CloudFirestore.Resource.String.common_google_play_services_enable_button = global::NoQueue.Droid.Resource.String.common_google_play_services_enable_button;
+			global::Plugin.CloudFirestore.Resource.String.common_google_play_services_enable_text = global::NoQueue.Droid.Resource.String.common_google_play_services_enable_text;
+			global::Plugin.CloudFirestore.Resource.String.common_google_play_services_enable_title = global::NoQueue.Droid.Resource.String.common_google_play_services_enable_title;
+			global::Plugin.CloudFirestore.Resource.String.common_google_play_services_install_button = global::NoQueue.Droid.Resource.String.common_google_play_services_install_button;
+			global::Plugin.CloudFirestore.Resource.String.common_google_play_services_install_text = global::NoQueue.Droid.Resource.String.common_google_play_services_install_text;
+			global::Plugin.CloudFirestore.Resource.String.common_google_play_services_install_title = global::NoQueue.Droid.Resource.String.common_google_play_services_install_title;
+			global::Plugin.CloudFirestore.Resource.String.common_google_play_services_notification_channel_name = global::NoQueue.Droid.Resource.String.common_google_play_services_notification_channel_name;
+			global::Plugin.CloudFirestore.Resource.String.common_google_play_services_notification_ticker = global::NoQueue.Droid.Resource.String.common_google_play_services_notification_ticker;
+			global::Plugin.CloudFirestore.Resource.String.common_google_play_services_unknown_issue = global::NoQueue.Droid.Resource.String.common_google_play_services_unknown_issue;
+			global::Plugin.CloudFirestore.Resource.String.common_google_play_services_unsupported_text = global::NoQueue.Droid.Resource.String.common_google_play_services_unsupported_text;
+			global::Plugin.CloudFirestore.Resource.String.common_google_play_services_update_button = global::NoQueue.Droid.Resource.String.common_google_play_services_update_button;
+			global::Plugin.CloudFirestore.Resource.String.common_google_play_services_update_text = global::NoQueue.Droid.Resource.String.common_google_play_services_update_text;
+			global::Plugin.CloudFirestore.Resource.String.common_google_play_services_update_title = global::NoQueue.Droid.Resource.String.common_google_play_services_update_title;
+			global::Plugin.CloudFirestore.Resource.String.common_google_play_services_updating_text = global::NoQueue.Droid.Resource.String.common_google_play_services_updating_text;
+			global::Plugin.CloudFirestore.Resource.String.common_google_play_services_wear_update_text = global::NoQueue.Droid.Resource.String.common_google_play_services_wear_update_text;
+			global::Plugin.CloudFirestore.Resource.String.common_open_on_phone = global::NoQueue.Droid.Resource.String.common_open_on_phone;
+			global::Plugin.CloudFirestore.Resource.String.common_signin_button_text = global::NoQueue.Droid.Resource.String.common_signin_button_text;
+			global::Plugin.CloudFirestore.Resource.String.common_signin_button_text_long = global::NoQueue.Droid.Resource.String.common_signin_button_text_long;
+			global::Plugin.CloudFirestore.Resource.String.status_bar_notification_info_overflow = global::NoQueue.Droid.Resource.String.status_bar_notification_info_overflow;
+			global::Plugin.CloudFirestore.Resource.Style.TextAppearance_Compat_Notification = global::NoQueue.Droid.Resource.Style.TextAppearance_Compat_Notification;
+			global::Plugin.CloudFirestore.Resource.Style.TextAppearance_Compat_Notification_Info = global::NoQueue.Droid.Resource.Style.TextAppearance_Compat_Notification_Info;
+			global::Plugin.CloudFirestore.Resource.Style.TextAppearance_Compat_Notification_Info_Media = global::NoQueue.Droid.Resource.Style.TextAppearance_Compat_Notification_Info_Media;
+			global::Plugin.CloudFirestore.Resource.Style.TextAppearance_Compat_Notification_Line2 = global::NoQueue.Droid.Resource.Style.TextAppearance_Compat_Notification_Line2;
+			global::Plugin.CloudFirestore.Resource.Style.TextAppearance_Compat_Notification_Line2_Media = global::NoQueue.Droid.Resource.Style.TextAppearance_Compat_Notification_Line2_Media;
+			global::Plugin.CloudFirestore.Resource.Style.TextAppearance_Compat_Notification_Media = global::NoQueue.Droid.Resource.Style.TextAppearance_Compat_Notification_Media;
+			global::Plugin.CloudFirestore.Resource.Style.TextAppearance_Compat_Notification_Time = global::NoQueue.Droid.Resource.Style.TextAppearance_Compat_Notification_Time;
+			global::Plugin.CloudFirestore.Resource.Style.TextAppearance_Compat_Notification_Time_Media = global::NoQueue.Droid.Resource.Style.TextAppearance_Compat_Notification_Time_Media;
+			global::Plugin.CloudFirestore.Resource.Style.TextAppearance_Compat_Notification_Title = global::NoQueue.Droid.Resource.Style.TextAppearance_Compat_Notification_Title;
+			global::Plugin.CloudFirestore.Resource.Style.TextAppearance_Compat_Notification_Title_Media = global::NoQueue.Droid.Resource.Style.TextAppearance_Compat_Notification_Title_Media;
+			global::Plugin.CloudFirestore.Resource.Style.Widget_Compat_NotificationActionContainer = global::NoQueue.Droid.Resource.Style.Widget_Compat_NotificationActionContainer;
+			global::Plugin.CloudFirestore.Resource.Style.Widget_Compat_NotificationActionText = global::NoQueue.Droid.Resource.Style.Widget_Compat_NotificationActionText;
+			global::Plugin.CloudFirestore.Resource.Style.Widget_Support_CoordinatorLayout = global::NoQueue.Droid.Resource.Style.Widget_Support_CoordinatorLayout;
+			global::Plugin.CloudFirestore.Resource.Styleable.ColorStateListItem = global::NoQueue.Droid.Resource.Styleable.ColorStateListItem;
+			global::Plugin.CloudFirestore.Resource.Styleable.ColorStateListItem_alpha = global::NoQueue.Droid.Resource.Styleable.ColorStateListItem_alpha;
+			global::Plugin.CloudFirestore.Resource.Styleable.ColorStateListItem_android_alpha = global::NoQueue.Droid.Resource.Styleable.ColorStateListItem_android_alpha;
+			global::Plugin.CloudFirestore.Resource.Styleable.ColorStateListItem_android_color = global::NoQueue.Droid.Resource.Styleable.ColorStateListItem_android_color;
+			global::Plugin.CloudFirestore.Resource.Styleable.CoordinatorLayout = global::NoQueue.Droid.Resource.Styleable.CoordinatorLayout;
+			global::Plugin.CloudFirestore.Resource.Styleable.CoordinatorLayout_keylines = global::NoQueue.Droid.Resource.Styleable.CoordinatorLayout_keylines;
+			global::Plugin.CloudFirestore.Resource.Styleable.CoordinatorLayout_Layout = global::NoQueue.Droid.Resource.Styleable.CoordinatorLayout_Layout;
+			global::Plugin.CloudFirestore.Resource.Styleable.CoordinatorLayout_Layout_android_layout_gravity = global::NoQueue.Droid.Resource.Styleable.CoordinatorLayout_Layout_android_layout_gravity;
+			global::Plugin.CloudFirestore.Resource.Styleable.CoordinatorLayout_Layout_layout_anchor = global::NoQueue.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchor;
+			global::Plugin.CloudFirestore.Resource.Styleable.CoordinatorLayout_Layout_layout_anchorGravity = global::NoQueue.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchorGravity;
+			global::Plugin.CloudFirestore.Resource.Styleable.CoordinatorLayout_Layout_layout_behavior = global::NoQueue.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_behavior;
+			global::Plugin.CloudFirestore.Resource.Styleable.CoordinatorLayout_Layout_layout_dodgeInsetEdges = global::NoQueue.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_dodgeInsetEdges;
+			global::Plugin.CloudFirestore.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge = global::NoQueue.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge;
+			global::Plugin.CloudFirestore.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline = global::NoQueue.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline;
+			global::Plugin.CloudFirestore.Resource.Styleable.CoordinatorLayout_statusBarBackground = global::NoQueue.Droid.Resource.Styleable.CoordinatorLayout_statusBarBackground;
+			global::Plugin.CloudFirestore.Resource.Styleable.FontFamily = global::NoQueue.Droid.Resource.Styleable.FontFamily;
+			global::Plugin.CloudFirestore.Resource.Styleable.FontFamilyFont = global::NoQueue.Droid.Resource.Styleable.FontFamilyFont;
+			global::Plugin.CloudFirestore.Resource.Styleable.FontFamilyFont_android_font = global::NoQueue.Droid.Resource.Styleable.FontFamilyFont_android_font;
+			global::Plugin.CloudFirestore.Resource.Styleable.FontFamilyFont_android_fontStyle = global::NoQueue.Droid.Resource.Styleable.FontFamilyFont_android_fontStyle;
+			global::Plugin.CloudFirestore.Resource.Styleable.FontFamilyFont_android_fontVariationSettings = global::NoQueue.Droid.Resource.Styleable.FontFamilyFont_android_fontVariationSettings;
+			global::Plugin.CloudFirestore.Resource.Styleable.FontFamilyFont_android_fontWeight = global::NoQueue.Droid.Resource.Styleable.FontFamilyFont_android_fontWeight;
+			global::Plugin.CloudFirestore.Resource.Styleable.FontFamilyFont_android_ttcIndex = global::NoQueue.Droid.Resource.Styleable.FontFamilyFont_android_ttcIndex;
+			global::Plugin.CloudFirestore.Resource.Styleable.FontFamilyFont_font = global::NoQueue.Droid.Resource.Styleable.FontFamilyFont_font;
+			global::Plugin.CloudFirestore.Resource.Styleable.FontFamilyFont_fontStyle = global::NoQueue.Droid.Resource.Styleable.FontFamilyFont_fontStyle;
+			global::Plugin.CloudFirestore.Resource.Styleable.FontFamilyFont_fontVariationSettings = global::NoQueue.Droid.Resource.Styleable.FontFamilyFont_fontVariationSettings;
+			global::Plugin.CloudFirestore.Resource.Styleable.FontFamilyFont_fontWeight = global::NoQueue.Droid.Resource.Styleable.FontFamilyFont_fontWeight;
+			global::Plugin.CloudFirestore.Resource.Styleable.FontFamilyFont_ttcIndex = global::NoQueue.Droid.Resource.Styleable.FontFamilyFont_ttcIndex;
+			global::Plugin.CloudFirestore.Resource.Styleable.FontFamily_fontProviderAuthority = global::NoQueue.Droid.Resource.Styleable.FontFamily_fontProviderAuthority;
+			global::Plugin.CloudFirestore.Resource.Styleable.FontFamily_fontProviderCerts = global::NoQueue.Droid.Resource.Styleable.FontFamily_fontProviderCerts;
+			global::Plugin.CloudFirestore.Resource.Styleable.FontFamily_fontProviderFetchStrategy = global::NoQueue.Droid.Resource.Styleable.FontFamily_fontProviderFetchStrategy;
+			global::Plugin.CloudFirestore.Resource.Styleable.FontFamily_fontProviderFetchTimeout = global::NoQueue.Droid.Resource.Styleable.FontFamily_fontProviderFetchTimeout;
+			global::Plugin.CloudFirestore.Resource.Styleable.FontFamily_fontProviderPackage = global::NoQueue.Droid.Resource.Styleable.FontFamily_fontProviderPackage;
+			global::Plugin.CloudFirestore.Resource.Styleable.FontFamily_fontProviderQuery = global::NoQueue.Droid.Resource.Styleable.FontFamily_fontProviderQuery;
+			global::Plugin.CloudFirestore.Resource.Styleable.GradientColor = global::NoQueue.Droid.Resource.Styleable.GradientColor;
+			global::Plugin.CloudFirestore.Resource.Styleable.GradientColorItem = global::NoQueue.Droid.Resource.Styleable.GradientColorItem;
+			global::Plugin.CloudFirestore.Resource.Styleable.GradientColorItem_android_color = global::NoQueue.Droid.Resource.Styleable.GradientColorItem_android_color;
+			global::Plugin.CloudFirestore.Resource.Styleable.GradientColorItem_android_offset = global::NoQueue.Droid.Resource.Styleable.GradientColorItem_android_offset;
+			global::Plugin.CloudFirestore.Resource.Styleable.GradientColor_android_centerColor = global::NoQueue.Droid.Resource.Styleable.GradientColor_android_centerColor;
+			global::Plugin.CloudFirestore.Resource.Styleable.GradientColor_android_centerX = global::NoQueue.Droid.Resource.Styleable.GradientColor_android_centerX;
+			global::Plugin.CloudFirestore.Resource.Styleable.GradientColor_android_centerY = global::NoQueue.Droid.Resource.Styleable.GradientColor_android_centerY;
+			global::Plugin.CloudFirestore.Resource.Styleable.GradientColor_android_endColor = global::NoQueue.Droid.Resource.Styleable.GradientColor_android_endColor;
+			global::Plugin.CloudFirestore.Resource.Styleable.GradientColor_android_endX = global::NoQueue.Droid.Resource.Styleable.GradientColor_android_endX;
+			global::Plugin.CloudFirestore.Resource.Styleable.GradientColor_android_endY = global::NoQueue.Droid.Resource.Styleable.GradientColor_android_endY;
+			global::Plugin.CloudFirestore.Resource.Styleable.GradientColor_android_gradientRadius = global::NoQueue.Droid.Resource.Styleable.GradientColor_android_gradientRadius;
+			global::Plugin.CloudFirestore.Resource.Styleable.GradientColor_android_startColor = global::NoQueue.Droid.Resource.Styleable.GradientColor_android_startColor;
+			global::Plugin.CloudFirestore.Resource.Styleable.GradientColor_android_startX = global::NoQueue.Droid.Resource.Styleable.GradientColor_android_startX;
+			global::Plugin.CloudFirestore.Resource.Styleable.GradientColor_android_startY = global::NoQueue.Droid.Resource.Styleable.GradientColor_android_startY;
+			global::Plugin.CloudFirestore.Resource.Styleable.GradientColor_android_tileMode = global::NoQueue.Droid.Resource.Styleable.GradientColor_android_tileMode;
+			global::Plugin.CloudFirestore.Resource.Styleable.GradientColor_android_type = global::NoQueue.Droid.Resource.Styleable.GradientColor_android_type;
+			global::Plugin.CloudFirestore.Resource.Styleable.LoadingImageView = global::NoQueue.Droid.Resource.Styleable.LoadingImageView;
+			global::Plugin.CloudFirestore.Resource.Styleable.LoadingImageView_circleCrop = global::NoQueue.Droid.Resource.Styleable.LoadingImageView_circleCrop;
+			global::Plugin.CloudFirestore.Resource.Styleable.LoadingImageView_imageAspectRatio = global::NoQueue.Droid.Resource.Styleable.LoadingImageView_imageAspectRatio;
+			global::Plugin.CloudFirestore.Resource.Styleable.LoadingImageView_imageAspectRatioAdjust = global::NoQueue.Droid.Resource.Styleable.LoadingImageView_imageAspectRatioAdjust;
+			global::Plugin.CloudFirestore.Resource.Styleable.SignInButton = global::NoQueue.Droid.Resource.Styleable.SignInButton;
+			global::Plugin.CloudFirestore.Resource.Styleable.SignInButton_buttonSize = global::NoQueue.Droid.Resource.Styleable.SignInButton_buttonSize;
+			global::Plugin.CloudFirestore.Resource.Styleable.SignInButton_colorScheme = global::NoQueue.Droid.Resource.Styleable.SignInButton_colorScheme;
+			global::Plugin.CloudFirestore.Resource.Styleable.SignInButton_scopeUris = global::NoQueue.Droid.Resource.Styleable.SignInButton_scopeUris;
 			global::Xamarin.Essentials.Resource.Attribute.alpha = global::NoQueue.Droid.Resource.Attribute.alpha;
 			global::Xamarin.Essentials.Resource.Attribute.coordinatorLayoutStyle = global::NoQueue.Droid.Resource.Attribute.coordinatorLayoutStyle;
 			global::Xamarin.Essentials.Resource.Attribute.font = global::NoQueue.Droid.Resource.Attribute.font;
@@ -9630,91 +9898,97 @@ namespace NoQueue.Droid
 			public const int common_google_play_services_install_title = 2131558448;
 			
 			// aapt resource value: 0x7F0D0031
-			public const int common_google_play_services_notification_ticker = 2131558449;
+			public const int common_google_play_services_notification_channel_name = 2131558449;
 			
 			// aapt resource value: 0x7F0D0032
-			public const int common_google_play_services_unknown_issue = 2131558450;
+			public const int common_google_play_services_notification_ticker = 2131558450;
 			
 			// aapt resource value: 0x7F0D0033
-			public const int common_google_play_services_unsupported_text = 2131558451;
+			public const int common_google_play_services_unknown_issue = 2131558451;
 			
 			// aapt resource value: 0x7F0D0034
-			public const int common_google_play_services_update_button = 2131558452;
+			public const int common_google_play_services_unsupported_text = 2131558452;
 			
 			// aapt resource value: 0x7F0D0035
-			public const int common_google_play_services_update_text = 2131558453;
+			public const int common_google_play_services_update_button = 2131558453;
 			
 			// aapt resource value: 0x7F0D0036
-			public const int common_google_play_services_update_title = 2131558454;
+			public const int common_google_play_services_update_text = 2131558454;
 			
 			// aapt resource value: 0x7F0D0037
-			public const int common_google_play_services_updating_text = 2131558455;
+			public const int common_google_play_services_update_title = 2131558455;
 			
 			// aapt resource value: 0x7F0D0038
-			public const int common_google_play_services_wear_update_text = 2131558456;
+			public const int common_google_play_services_updating_text = 2131558456;
 			
 			// aapt resource value: 0x7F0D0039
-			public const int common_open_on_phone = 2131558457;
+			public const int common_google_play_services_wear_update_text = 2131558457;
 			
 			// aapt resource value: 0x7F0D003A
-			public const int common_signin_button_text = 2131558458;
+			public const int common_open_on_phone = 2131558458;
 			
 			// aapt resource value: 0x7F0D003B
-			public const int common_signin_button_text_long = 2131558459;
+			public const int common_signin_button_text = 2131558459;
 			
 			// aapt resource value: 0x7F0D003C
-			public const int default_web_client_id = 2131558460;
+			public const int common_signin_button_text_long = 2131558460;
 			
 			// aapt resource value: 0x7F0D003D
-			public const int fab_transformation_scrim_behavior = 2131558461;
+			public const int default_web_client_id = 2131558461;
 			
 			// aapt resource value: 0x7F0D003E
-			public const int fab_transformation_sheet_behavior = 2131558462;
+			public const int fab_transformation_scrim_behavior = 2131558462;
 			
 			// aapt resource value: 0x7F0D003F
-			public const int firebase_database_url = 2131558463;
+			public const int fab_transformation_sheet_behavior = 2131558463;
 			
 			// aapt resource value: 0x7F0D0040
-			public const int gcm_defaultSenderId = 2131558464;
+			public const int firebase_database_url = 2131558464;
 			
 			// aapt resource value: 0x7F0D0041
-			public const int google_api_key = 2131558465;
+			public const int gcm_defaultSenderId = 2131558465;
 			
 			// aapt resource value: 0x7F0D0042
-			public const int google_app_id = 2131558466;
+			public const int google_api_key = 2131558466;
 			
 			// aapt resource value: 0x7F0D0043
-			public const int google_crash_reporting_api_key = 2131558467;
+			public const int google_app_id = 2131558467;
 			
 			// aapt resource value: 0x7F0D0044
-			public const int google_storage_bucket = 2131558468;
+			public const int google_crash_reporting_api_key = 2131558468;
 			
 			// aapt resource value: 0x7F0D0045
-			public const int hide_bottom_view_on_scroll_behavior = 2131558469;
+			public const int google_storage_bucket = 2131558469;
 			
 			// aapt resource value: 0x7F0D0046
-			public const int mtrl_chip_close_icon_content_description = 2131558470;
+			public const int hide_bottom_view_on_scroll_behavior = 2131558470;
 			
 			// aapt resource value: 0x7F0D0047
-			public const int password_toggle_content_description = 2131558471;
+			public const int mtrl_chip_close_icon_content_description = 2131558471;
 			
 			// aapt resource value: 0x7F0D0048
-			public const int path_password_eye = 2131558472;
+			public const int password_toggle_content_description = 2131558472;
 			
 			// aapt resource value: 0x7F0D0049
-			public const int path_password_eye_mask_strike_through = 2131558473;
+			public const int path_password_eye = 2131558473;
 			
 			// aapt resource value: 0x7F0D004A
-			public const int path_password_eye_mask_visible = 2131558474;
+			public const int path_password_eye_mask_strike_through = 2131558474;
 			
 			// aapt resource value: 0x7F0D004B
-			public const int path_password_strike_through = 2131558475;
+			public const int path_password_eye_mask_visible = 2131558475;
 			
 			// aapt resource value: 0x7F0D004C
-			public const int search_menu_title = 2131558476;
+			public const int path_password_strike_through = 2131558476;
 			
 			// aapt resource value: 0x7F0D004D
-			public const int status_bar_notification_info_overflow = 2131558477;
+			public const int project_id = 2131558477;
+			
+			// aapt resource value: 0x7F0D004E
+			public const int search_menu_title = 2131558478;
+			
+			// aapt resource value: 0x7F0D004F
+			public const int status_bar_notification_info_overflow = 2131558479;
 			
 			static String()
 			{

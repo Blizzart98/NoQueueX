@@ -18,7 +18,6 @@ using Firebase;
 using Xamarin.Forms.Xaml;
 using Java.Util;
 using Android.Preferences;
-using NoQueue.Interfaces;
 
 [assembly:Dependency(typeof(NoQueue.Droid.AuthDroid))]
 namespace NoQueue.Droid
