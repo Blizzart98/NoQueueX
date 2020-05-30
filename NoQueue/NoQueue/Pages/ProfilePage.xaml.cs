@@ -36,8 +36,11 @@ namespace NoQueue
                 ShowError();
             }
         }
-
-
+        public async void ToolbarItem_ClickedAdd(object sender, EventArgs e)
+        { 
+                await Navigation.PushAsync(new AddPage());
+                Navigation.RemovePage(this);
+        }
 
         async private void ShowError()
         {
