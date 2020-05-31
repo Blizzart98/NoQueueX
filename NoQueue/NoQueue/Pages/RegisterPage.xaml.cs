@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Plugin.CloudFirestore;
 using NoQueue.Entities;
+using NoQueue.Pages;
 
 namespace NoQueue
 {
@@ -44,7 +45,7 @@ namespace NoQueue
             if (created)
             {
                 await DisplayAlert("Success", "Welcome to our system. Log in to have full access", "OK");
-                await Navigation.PushAsync(new ProfilePage());
+                await Navigation.PushAsync(new ListPage());
                 Navigation.RemovePage(this);
             }
             else

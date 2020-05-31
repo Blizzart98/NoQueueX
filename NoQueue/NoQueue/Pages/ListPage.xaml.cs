@@ -1,27 +1,26 @@
-﻿using NoQueue.Pages;
-using System;
-using System.Collections.Generic;
+﻿using System;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace NoQueue
+namespace NoQueue.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ProfilePage : ContentPage
+    public partial class ListPage : ContentPage
     {
+        public ObservableCollection<string> Items { get; set; }
+
         InterfaceAuth auth;
-       
-        public ProfilePage()
+        public ListPage()
         {
             InitializeComponent();
             auth = DependencyService.Get<InterfaceAuth>();
-            string nome = auth.GetNome().ToString();
-            txtUser.Text = "Hello " + nome;
-
+            BindingContext = new ListViewViewModel();
+            
         }
 
         public async void ToolbarItem_Clicked(object sender, EventArgs e)
@@ -38,12 +37,11 @@ namespace NoQueue
                 ShowError();
             }
         }
-        public async void ToolbarItem_ClickedAdd(object sender, EventArgs e)
-        { 
-                Navigation.PushAsync(new AddPage());
-                Navigation.RemovePage(this);
+        public void ToolbarItem_ClickedAdd(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new AddPage());
+            Navigation.RemovePage(this);
         }
-
         async private void ShowError()
         {
             await DisplayAlert("Logout Failed", "Lol", "OK");

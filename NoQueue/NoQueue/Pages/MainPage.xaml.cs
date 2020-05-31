@@ -1,4 +1,5 @@
 ﻿
+using NoQueue.Pages;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,7 +34,7 @@ namespace NoQueue
             if (result)
             {
                 
-                Navigation.PushAsync(new ProfilePage());
+                Navigation.PushAsync(new ListPage());
                 Navigation.RemovePage(this);
             }
             else
@@ -48,15 +49,13 @@ namespace NoQueue
             bool result = await auth.AuthenticateUser(a, b);
             if (result)
             {
-
-                Navigation.PushAsync(new ProfilePage());
+                Navigation.PushAsync(new ListPage());
                 Navigation.RemovePage(this);
             }
             else
             {
                 ShowError();
             }
-
         }
 
         async private void ShowError()
