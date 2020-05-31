@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using static Android.App.DownloadManager;
 
-namespace NoQueue.Pages
+namespace NoQueue.Helpers
 {
     public class ListViewViewModel
     {

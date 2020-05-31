@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Android.Icu.Util;
+using NoQueue.Entities;
+using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
@@ -81,5 +83,6 @@ namespace NoQueue.Pages
             }
         }
 
+        
     }
 }
