@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:syncfusion="clr-namespace:Syncfusion.SfPicker.XForms;assembly=Syncfusion.SfPicker.XForms"
              mc:Ignorable="d"
              x:Class="NoQueue.Pages.AddPage">
     <ContentPage.Content>
@@ -13,26 +13,39 @@
             <Image Source="@drawable/ic_launcher_round"/>
             <Label Text="Aggiungi prenotazione"
                    Margin="15"
-               FontSize="Title" 
+               FontSize="Title"
                TextColor="Black" 
                HorizontalTextAlignment="Center"/>
 
             <Label Text="Scegli città:"
-                   FontSize="Title"/>
+                   FontSize="Subtitle"/>
+
             <Picker 
 	            x:Name="CityPicker" 
 	            Title="Cities" 	
                 SelectedIndexChanged="PickerSelectedIndexChanged"
-                VerticalOptions="Center">
+                VerticalOptions="Center"
+                TitleColor="Black"
+              >
                 <Picker.Items>
                     <x:String>Camerano</x:String>
                     <x:String>Cupramontana</x:String>
                 </Picker.Items>
-            </Picker> 
-            
+            </Picker>
+
+            <Label Text="Scegli Supermercato:"
+                   FontSize="Subtitle"/>
+
+            <Picker 
+	            x:Name="MarketPicker" 
+	            Title="Markets" 	
+                SelectedIndexChanged="MarketSelectedIndexChanged"
+                VerticalOptions="Center">
+            </Picker>
+
 
             <Label Text="Scegli la data:"
-                   FontSize="Title"/>
+                   FontSize="Subtitle"/>
             <DatePicker 
 	            x:Name="DatePicker" 
 	            Format="D"
