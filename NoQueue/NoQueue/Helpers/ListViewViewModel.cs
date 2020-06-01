@@ -46,11 +46,13 @@ namespace NoQueue.Helpers
 
         private async Task<IEnumerable<Prenotazione>> GetUserPostsList() //prende tutte le pren da firebase e le mette in un IEnumerable
         {
-
-            var group = await CrossCloudFirestore.Current.
-                Instance.
-                GetCollection("utenti/" + auth.GetEmail() + "/Prenotazioni").
-                GetDocumentsAsync();
+            string email = auth.GetEmail();
+            var group = await CrossCloudFirestore.Current
+                                                .Instance
+                                                .GetCollection("utenti")
+                                                .GetDocument(email)
+                                                .GetCollection("Prenotazioni")
+                                                .GetDocumentsAsync();
 
             var yourModels = group.ToObjects<Prenotazione>();
             return yourModels;

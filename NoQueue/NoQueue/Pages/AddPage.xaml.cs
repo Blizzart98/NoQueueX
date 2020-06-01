@@ -27,8 +27,10 @@ namespace NoQueue.Pages
 
         public string market;
 
-        static public int minute;
-        static public int hour;
+        static public string minute;
+        static public int iminute;
+        static public string hour;
+        static public int ihour;
 
         int timeCheck = 0;
 
@@ -39,6 +41,7 @@ namespace NoQueue.Pages
         {
             InitializeComponent();
             auth = DependencyService.Get<InterfaceAuth>();
+            DatePicker.SetValue(DatePicker.MinimumDateProperty, DateTime.Now);
         }
 
         private void PickerSelectedIndexChanged(object sender, EventArgs e)
@@ -58,24 +61,34 @@ namespace NoQueue.Pages
             year = DatePicker.Date.Year;
             month = DatePicker.Date.Month;
             day = DatePicker.Date.Day;
-            date = DatePicker.Format.ToString();
-            TimePicker.IsEnabled = true;
+            date = DatePicker.Date.ToString().Substring(0, 8);
+            HourPicker.IsEnabled = true;
         }
 
-        private void OnTimePickerPropertyChanged(object sender, EventArgs e)
+        private void HourSelectedIndexChanged(object sender, EventArgs e)
         {
-            minute = TimePicker.Time.Minutes;
-            hour = TimePicker.Time.Hours;
+            hour = HourPicker.Items[HourPicker.SelectedIndex];
+            MinutePicker.IsEnabled = true;
+           ihour = Convert.ToInt32(hour);
+        }
+
+        private void MinuteSelectedIndexChanged(object sender, EventArgs e)
+        {
+            minute = MinutePicker.Items[MinutePicker.SelectedIndex];
             timeCheck++;
-            if(timeCheck>9)
+            //if (timeCheck > 9)
                 Btn_Check.IsEnabled = true;
+            iminute = Convert.ToInt32(minute);
         }
 
         private async void Btn_Check_Clicked(object sender, EventArgs e)
         {
              int[] count = { 0 };
 
-            dt = new DateTime(year, month, day, hour, minute, 0, 0);
+            
+            
+
+            dt = new DateTime(year, month, day, ihour, iminute, 0, 0);
 
             ts = MillisecondsTimestamp(dt);
 
@@ -115,7 +128,7 @@ namespace NoQueue.Pages
             
             var email = auth.GetEmail();
 
-            Prenotazione prenotazione = new Prenotazione(city, market, hour, minute, date, ts);
+            Prenotazione prenotazione = new Prenotazione(city, market, ihour, iminute, date, ts);
             await CrossCloudFirestore.Current
                          .Instance
                          .GetCollection("utenti")

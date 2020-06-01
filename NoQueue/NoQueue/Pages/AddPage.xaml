@@ -15,22 +15,24 @@
                    Margin="10"
                FontSize="Large"
                TextColor="Blue" 
-               HorizontalTextAlignment="Center" Padding="10,0,10,10" FontAttributes="Bold">
+               HorizontalTextAlignment="Center" FontAttributes="Bold">
             </Label>
 
-
-
-            <StackLayout  Orientation="Horizontal" HorizontalOptions="Start" VerticalOptions="Center" Visual="Material" >
-                <Label Text="Città:"
-                   FontSize="20"
-                   TextColor="Black" Visual="Material"  HorizontalTextAlignment="Start" HorizontalOptions="CenterAndExpand"/>
+            <Label x:Name="lblcitta"
+                Text="Città:"
+                       HorizontalTextAlignment="Start"
+                        FontSize="20"
+                        TextColor="Black" 
+                       Visual="Material"  
+                       />
                 <Picker 
-                WidthRequest="100"
-	            x:Name="CityPicker" 
-	            Title="Cities" 
-                SelectedIndexChanged="PickerSelectedIndexChanged" 
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Start"
+	                x:Name="CityPicker" 
+	                Title="Cities" 
+                    SelectedIndexChanged="PickerSelectedIndexChanged" 
                     FontAttributes="Italic"
-                    VerticalOptions="Center" 
+                   
                     Visual="Material" >
                     <Picker.Items>
                         <x:String>Camerano</x:String>
@@ -38,47 +40,84 @@
                     </Picker.Items>
                 </Picker>
 
-            </StackLayout>
+           
 
-            <StackLayout  Orientation="Horizontal" HorizontalOptions="Start" VerticalOptions="Center" Visual="Material">
+            
             <Label Text="Market:"
                    FontSize="20"
-                   TextColor="Black"/>
+                   TextColor="Black"
+                   />
 
-            <Picker 
-	            x:Name="MarketPicker" 
-	            Title="Markets" 	
-                FontAttributes="Italic"
-                WidthRequest="200"
-                SelectedIndexChanged="MarketSelectedIndexChanged"
-                IsEnabled="False"
-                VerticalOptions="Center">
-            </Picker>
-            </StackLayout>
-
+                <Picker 
+                    
+	                 x:Name="MarketPicker" 
+	                  Title="Markets" 	
+                     FontAttributes="Italic"
+                        SelectedIndexChanged="MarketSelectedIndexChanged"
+                    IsEnabled="False"
+                     VerticalOptions="Center">
+                </Picker>
 
             <StackLayout  Orientation="Horizontal" HorizontalOptions="Start" VerticalOptions="Center" Visual="Material">
                 <Label Text="Data:"
                    FontSize="20"
                    TextColor="Black"/>
-            <DatePicker 
+                <DatePicker 
 	            x:Name="DatePicker" 
                 IsEnabled="False"
-	            Format="dd-MM-yyyy"
+	            Format="d"
+                MinimumDate="{Binding ExpenseDate}"
  	            VerticalOptions="Center" 	
                 DateSelected="DatePickerDateSelected">
-            </DatePicker>
-            </StackLayout>
+                </DatePicker>
 
-            <StackLayout  Orientation="Horizontal" HorizontalOptions="Start" VerticalOptions="Center" Visual="Material">
-                    <Label Text="Orario:"
+                <Label Text="Orario:"
                    FontSize="20"
+                   HorizontalOptions="End"
                    TextColor="Black"/>
-            <TimePicker x:Name="TimePicker"
-                    Format="t"
-                        IsEnabled="false"
-                    PropertyChanged="OnTimePickerPropertyChanged"
-                    />
+                <Picker 
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Start"
+	                x:Name="HourPicker" 
+	                Title="Ora"
+                    IsEnabled="False"
+                    SelectedIndexChanged="HourSelectedIndexChanged" 
+                    FontAttributes="Italic"
+                    Visual="Material" >
+                    <Picker.Items>
+                        <x:String>8</x:String>
+                        <x:String>9</x:String>
+                        <x:String>10</x:String>
+                        <x:String>11</x:String>
+                        <x:String>12</x:String>
+                        <x:String>13</x:String>
+                        <x:String>14</x:String>
+                        <x:String>15</x:String>
+                        <x:String>16</x:String>
+                        <x:String>17</x:String>
+                        <x:String>18</x:String>
+                        <x:String>19</x:String>
+                        <x:String>20</x:String>
+                    </Picker.Items>
+                    
+                </Picker>
+
+                <Picker 
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Start"
+	                x:Name="MinutePicker" 
+	                Title="Minuti" 
+                    IsEnabled="False"
+                    SelectedIndexChanged="MinuteSelectedIndexChanged" 
+                    FontAttributes="Italic"
+                    Visual="Material" >
+                    <Picker.Items>
+                        <x:String>00</x:String>
+                        <x:String>15</x:String>
+                        <x:String>30</x:String>
+                        <x:String>45</x:String>
+                    </Picker.Items>
+                </Picker>
 
             </StackLayout>
 
@@ -108,7 +147,9 @@
                     BackgroundColor="PaleVioletRed"
                     HorizontalOptions="Fill"
                     Visual="Material"
-                 BorderColor="Blue" BorderWidth="2" FontAttributes="Bold"/>
+                    BorderColor="Blue" 
+                    BorderWidth="2" 
+                    FontAttributes="Bold"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
