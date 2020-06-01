@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="NoQueue.Pages.ListPage">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text=""
+                     Clicked="ToolbarItem_Clicked"
+                 IconImageSource="icon_logout.png"
+                 Order="Primary"
+                 Priority="1" />
+        <ToolbarItem Text=""
+                     Clicked="ToolbarItem_ClickedAdd"
+                 IconImageSource="icon_add.png"
+                 Order="Primary"
+                 Priority="0" />
+    </ContentPage.ToolbarItems>
+
+    <ListView x:Name="MyListView"
+            ItemsSource="{Binding PersonList}"
+            CachingStrategy="RecycleElement"
+            HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                     <ViewCell>
+                        <StackLayout Padding="5">
+                             <Label Text="{Binding citta}" 
+                                d:Text="{Binding .}"
+                                Style="{DynamicResource ListItemTextStyle}" />
+                            <Label Text="{Binding negozio}" 
+                                d:Text="Detail"
+                                Style="{DynamicResource ListItemDetailTextStyle}"/>
+                            <Label Text="{Binding data}" 
+                                d:Text="Detail"
+                                Style="{DynamicResource ListItemDetailTextStyle}"/>
+                            <Label Text="{Binding ora}" 
+                                d:Text="Detail"
+                                Style="{DynamicResource ListItemDetailTextStyle}"/>
+                            <Label Text="{Binding minuti}" 
+                                d:Text="Detail"
+                                Style="{DynamicResource ListItemDetailTextStyle}"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+             </ListView.ItemTemplate>
+
+  </ListView>
+</ContentPage>
