@@ -33,15 +33,24 @@
                             <Label Text="{Binding negozio}" 
                                 d:Text="Detail"
                                 Style="{DynamicResource ListItemDetailTextStyle}"/>
-                            <Label Text="{Binding data}" 
-                                d:Text="Detail"
-                                Style="{DynamicResource ListItemDetailTextStyle}"/>
-                            <Label Text="{Binding ora}" 
-                                d:Text="Detail"
-                                Style="{DynamicResource ListItemDetailTextStyle}"/>
-                            <Label Text="{Binding minuti}" 
-                                d:Text="Detail"
-                                Style="{DynamicResource ListItemDetailTextStyle}"/>
+                            <StackLayout
+                                Orientation="Horizontal">
+                                <Label Text="{Binding data}" 
+                                    d:Text="Detail"
+                                    Style="{DynamicResource ListItemDetailTextStyle}"/>
+                                <Label Text="{Binding ora}"
+                                       HorizontalTextAlignment="End"
+                                    d:Text="Detail"
+                                    Style="{DynamicResource ListItemDetailTextStyle}"/> 
+                                <Label Text=" : "
+                                    HorizontalTextAlignment="End"
+                                    d:Text="Detail"
+                                    Style="{DynamicResource ListItemDetailTextStyle}"/>
+                                 <Label Text="{Binding minuti}" 
+                                    d:Text="Detail"
+                                    Style="{DynamicResource ListItemDetailTextStyle}"/>
+                            </StackLayout>
+                            
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>

@@ -51,6 +51,7 @@
                 FontAttributes="Italic"
                 WidthRequest="200"
                 SelectedIndexChanged="MarketSelectedIndexChanged"
+                IsEnabled="False"
                 VerticalOptions="Center">
             </Picker>
             </StackLayout>
@@ -62,6 +63,7 @@
                    TextColor="Black"/>
             <DatePicker 
 	            x:Name="DatePicker" 
+                IsEnabled="False"
 	            Format="dd-MM-yyyy"
  	            VerticalOptions="Center" 	
                 DateSelected="DatePickerDateSelected">
@@ -74,6 +76,7 @@
                    TextColor="Black"/>
             <TimePicker x:Name="TimePicker"
                     Format="t"
+                        IsEnabled="false"
                     PropertyChanged="OnTimePickerPropertyChanged"
                     />
 
@@ -84,13 +87,15 @@
                 <Button x:Name="Btn_Check"
                         Clicked="Btn_Check_Clicked"
                     Text="CHECK" 
+                    IsEnabled="False"
                     BackgroundColor="CornflowerBlue"
                     HorizontalOptions="Center"
                     Visual="Material"
                     BorderColor="Blue" BorderWidth="2" FontAttributes="Bold"/>
 
                 <Label x:Name="lblCheck"
-                   Text="Libero: 1 persona"
+                   Text=""
+                   VerticalTextAlignment="Center"
                    FontSize="20"
                     TextColor="Green"/>
 
@@ -98,7 +103,7 @@
             <Button x:Name="Btn_Prenota"
                     Text="PRENOTA"
                     IsEnabled="False"
-                    IsVisible="False"
+                    IsVisible="True"
                     Clicked="Btn_Prenota_Clicked"
                     BackgroundColor="PaleVioletRed"
                     HorizontalOptions="Fill"

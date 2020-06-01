@@ -42,24 +42,11 @@ namespace NoQueue.Pages
         public void ToolbarItem_ClickedAdd(object sender, EventArgs e)
         {
             Navigation.PushAsync(new AddPage());
-            Navigation.RemovePage(this);
         }
         async private void ShowError()
         {
             await DisplayAlert("Logout Failed", "Lol", "OK");
         }
 
-        void Save()
-        {
-            Prenotazione k = new Prenotazione();
-            k.citta = CityPicker.SelectedItem.ToString();
-            k.negozio = MarketPicker.SelectedItem.ToString();
-            k.ora = 2;
-            k.minuti = 5;
-            k.data = DatePicker.ToString();
-            Calendar c = Calendar.GetInstance();
-
-            int t = (int)Java.Lang.JavaSystem.CurrentTimeMillis() / 1000;
-        }
     }
 }

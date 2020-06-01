@@ -30,6 +30,8 @@ namespace NoQueue.Pages
         static public int minute;
         static public int hour;
 
+        int timeCheck = 0;
+
         private long ts;
         DateTime dt;
         InterfaceAuth auth;
@@ -43,30 +45,31 @@ namespace NoQueue.Pages
         {
             city= CityPicker.Items[CityPicker.SelectedIndex];
             PopolaMarketPicker(city);
+            MarketPicker.IsEnabled = true;
+        }
+        private async void MarketSelectedIndexChanged(object sender, EventArgs e)
+        {
+            market = MarketPicker.Items[MarketPicker.SelectedIndex];
+            DatePicker.IsEnabled = true;
         }
 
         private void DatePickerDateSelected(object sender, EventArgs e) 
         {
-
             year = DatePicker.Date.Year;
             month = DatePicker.Date.Month;
             day = DatePicker.Date.Day;
-            date = DatePicker.Date.ToString();
-        }
-
-        private void MarketSelectedIndexChanged(object sender, EventArgs e)
-        {
-            market = MarketPicker.Items[MarketPicker.SelectedIndex];
+            date = DatePicker.Format.ToString();
+            TimePicker.IsEnabled = true;
         }
 
         private void OnTimePickerPropertyChanged(object sender, EventArgs e)
         {
-
             minute = TimePicker.Time.Minutes;
             hour = TimePicker.Time.Hours;
-
+            timeCheck++;
+            if(timeCheck>9)
+                Btn_Check.IsEnabled = true;
         }
-
 
         private async void Btn_Check_Clicked(object sender, EventArgs e)
         {
@@ -84,7 +87,7 @@ namespace NoQueue.Pages
                          .WhereEqualsTo("ts", ts)
                          .GetDocumentsAsync();
 
-            for (int i = 0; i == group.Count; i++)
+            for (int i = 0; i < group.Count; i++)
             { //per ogni documento della lista incremento contatore di uno
                 count[0] += 1;//se trovo aumento di 1
             }
@@ -105,7 +108,6 @@ namespace NoQueue.Pages
                 lblCheck.Text = $"Molto affollato: {count[0]} persone.";
             }
 
-            Btn_Prenota.IsVisible = true;
             Btn_Prenota.IsEnabled= true;
         }
         private async void Btn_Prenota_Clicked(object sender, EventArgs e)
@@ -113,7 +115,7 @@ namespace NoQueue.Pages
             
             var email = auth.GetEmail();
 
-            Prenotazione prenotazione = new Prenotazione(city, market, date, hour, minute, ts);
+            Prenotazione prenotazione = new Prenotazione(city, market, hour, minute, date, ts);
             await CrossCloudFirestore.Current
                          .Instance
                          .GetCollection("utenti")
@@ -121,8 +123,15 @@ namespace NoQueue.Pages
                          .GetCollection("Prenotazioni")
                          .CreateDocument()
                          .SetDataAsync(prenotazione);
+            await CrossCloudFirestore.Current
+                         .Instance
+                         .GetCollection("Supermercati")
+                         .GetDocument(market)
+                         .GetCollection("Prenotazioni")
+                         .CreateDocument()
+                         .SetDataAsync(prenotazione);
 
-            Navigation.PushAsync(new ProfilePage());
+            Navigation.PushAsync(new ListPage());
             Navigation.RemovePage(this);
 
 
