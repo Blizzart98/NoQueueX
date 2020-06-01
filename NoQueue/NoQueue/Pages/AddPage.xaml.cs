@@ -1,6 +1,9 @@
-﻿using System;
+﻿using NoQueue.Entities;
+using Plugin.CloudFirestore;
+using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Globalization;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -16,23 +19,39 @@ namespace NoQueue.Pages
     public partial class AddPage : ContentPage
     {
         public string city;
+
         public string date;
+        static public int month;
+        static public int day;
+        static public int year;
+
         public string market;
+
+        static public int minute;
+        static public int hour;
+
+        private long ts;
+        DateTime dt;
+        InterfaceAuth auth;
         public AddPage()
         {
             InitializeComponent();
+            auth = DependencyService.Get<InterfaceAuth>();
         }
 
         private void PickerSelectedIndexChanged(object sender, EventArgs e)
         {
             city= CityPicker.Items[CityPicker.SelectedIndex];
             PopolaMarketPicker(city);
-
         }
 
         private void DatePickerDateSelected(object sender, EventArgs e) 
         {
-           date = DatePicker.Date.ToString();
+
+            year = DatePicker.Date.Year;
+            month = DatePicker.Date.Month;
+            day = DatePicker.Date.Day;
+            date = DatePicker.Date.ToString();
         }
 
         private void MarketSelectedIndexChanged(object sender, EventArgs e)
@@ -40,6 +59,74 @@ namespace NoQueue.Pages
             market = MarketPicker.Items[MarketPicker.SelectedIndex];
         }
 
+        private void OnTimePickerPropertyChanged(object sender, EventArgs e)
+        {
+
+            minute = TimePicker.Time.Minutes;
+            hour = TimePicker.Time.Hours;
+
+        }
+
+
+        private async void Btn_Check_Clicked(object sender, EventArgs e)
+        {
+             int[] count = { 0 };
+
+            dt = new DateTime(year, month, day, hour, minute, 0, 0);
+
+            ts = MillisecondsTimestamp(dt);
+
+            var group = await CrossCloudFirestore.Current
+                         .Instance
+                         .GetCollection("Supermercati")
+                         .GetDocument(market)
+                         .GetCollection("Prenotazioni")
+                         .WhereEqualsTo("ts", ts)
+                         .GetDocumentsAsync();
+
+            for (int i = 0; i == group.Count; i++)
+            { //per ogni documento della lista incremento contatore di uno
+                count[0] += 1;//se trovo aumento di 1
+            }
+
+            if (count[0] <= 5)
+            {
+                lblCheck.TextColor= Color.Green;
+                lblCheck.Text = $"Libero: {count[0]} persone.";
+            }
+            else if (count[0] <= 10)
+            {
+                lblCheck.TextColor = Color.Yellow;
+                lblCheck.Text =$"Leggermente affollato: {count[0]} persone.";
+            }
+            else
+            {
+                lblCheck.TextColor = Color.Red;
+                lblCheck.Text = $"Molto affollato: {count[0]} persone.";
+            }
+
+            Btn_Prenota.IsVisible = true;
+            Btn_Prenota.IsEnabled= true;
+        }
+        private async void Btn_Prenota_Clicked(object sender, EventArgs e)
+        {
+            
+            var email = auth.GetEmail();
+
+            Prenotazione prenotazione = new Prenotazione(city, market, date, hour, minute, ts);
+            await CrossCloudFirestore.Current
+                         .Instance
+                         .GetCollection("utenti")
+                         .GetDocument(email)
+                         .GetCollection("Prenotazioni")
+                         .CreateDocument()
+                         .SetDataAsync(prenotazione);
+
+            Navigation.PushAsync(new ProfilePage());
+            Navigation.RemovePage(this);
+
+
+        }
         private void PopolaMarketPicker(string city)
         {
            /* var picker = new Picker();
@@ -81,5 +168,10 @@ namespace NoQueue.Pages
             }
         }
 
+        public static long MillisecondsTimestamp( DateTime d)
+        {
+            DateTime baseDate = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+            return (long)(d.ToUniversalTime() - baseDate).TotalMilliseconds / 1000;
+        }
     }
 }

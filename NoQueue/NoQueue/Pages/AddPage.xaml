@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:syncfusion="clr-namespace:Syncfusion.SfPicker.XForms;assembly=Syncfusion.SfPicker.XForms"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="NoQueue.Pages.AddPage">
     <ContentPage.Content>
@@ -10,50 +10,100 @@
             TranslationY="10"
             Padding="20">
             <!-- Place new controls here -->
-            <Image Source="@drawable/ic_launcher_round"/>
+            <Image Source="@drawable/ic_launcher_round" Aspect="AspectFit" VerticalOptions="Center"/>
             <Label Text="Aggiungi prenotazione"
-                   Margin="15"
-               FontSize="Title"
-               TextColor="Black" 
-               HorizontalTextAlignment="Center"/>
+                   Margin="10"
+               FontSize="Large"
+               TextColor="Blue" 
+               HorizontalTextAlignment="Center" Padding="10,0,10,10" FontAttributes="Bold">
+            </Label>
 
-            <Label Text="Scegli città:"
-                   FontSize="Subtitle"/>
 
-            <Picker 
+
+            <StackLayout  Orientation="Horizontal" HorizontalOptions="Start" VerticalOptions="Center" Visual="Material" >
+                <Label Text="Città:"
+                   FontSize="20"
+                   TextColor="Black" Visual="Material"  HorizontalTextAlignment="Start" HorizontalOptions="CenterAndExpand"/>
+                <Picker 
+                WidthRequest="100"
 	            x:Name="CityPicker" 
-	            Title="Cities" 	
-                SelectedIndexChanged="PickerSelectedIndexChanged"
-                VerticalOptions="Center"
-                TitleColor="Black"
-              >
-                <Picker.Items>
-                    <x:String>Camerano</x:String>
-                    <x:String>Cupramontana</x:String>
-                </Picker.Items>
-            </Picker>
+	            Title="Cities" 
+                SelectedIndexChanged="PickerSelectedIndexChanged" 
+                    FontAttributes="Italic"
+                    VerticalOptions="Center" 
+                    Visual="Material" >
+                    <Picker.Items>
+                        <x:String>Camerano</x:String>
+                        <x:String>Cupramontana</x:String>
+                    </Picker.Items>
+                </Picker>
 
-            <Label Text="Scegli Supermercato:"
-                   FontSize="Subtitle"/>
+            </StackLayout>
+
+            <StackLayout  Orientation="Horizontal" HorizontalOptions="Start" VerticalOptions="Center" Visual="Material">
+            <Label Text="Market:"
+                   FontSize="20"
+                   TextColor="Black"/>
 
             <Picker 
 	            x:Name="MarketPicker" 
 	            Title="Markets" 	
+                FontAttributes="Italic"
+                WidthRequest="200"
                 SelectedIndexChanged="MarketSelectedIndexChanged"
                 VerticalOptions="Center">
             </Picker>
+            </StackLayout>
 
 
-            <Label Text="Scegli la data:"
-                   FontSize="Subtitle"/>
+            <StackLayout  Orientation="Horizontal" HorizontalOptions="Start" VerticalOptions="Center" Visual="Material">
+                <Label Text="Data:"
+                   FontSize="20"
+                   TextColor="Black"/>
             <DatePicker 
 	            x:Name="DatePicker" 
-	            Format="D"
+	            Format="dd-MM-yyyy"
  	            VerticalOptions="Center" 	
                 DateSelected="DatePickerDateSelected">
             </DatePicker>
+            </StackLayout>
+
+            <StackLayout  Orientation="Horizontal" HorizontalOptions="Start" VerticalOptions="Center" Visual="Material">
+                    <Label Text="Orario:"
+                   FontSize="20"
+                   TextColor="Black"/>
+            <TimePicker x:Name="TimePicker"
+                    Format="t"
+                    PropertyChanged="OnTimePickerPropertyChanged"
+                    />
+
+            </StackLayout>
 
 
+            <StackLayout  Orientation="Horizontal" HorizontalOptions="Start" VerticalOptions="Center" Visual="Material">
+                <Button x:Name="Btn_Check"
+                        Clicked="Btn_Check_Clicked"
+                    Text="CHECK" 
+                    BackgroundColor="CornflowerBlue"
+                    HorizontalOptions="Center"
+                    Visual="Material"
+                    BorderColor="Blue" BorderWidth="2" FontAttributes="Bold"/>
+
+                <Label x:Name="lblCheck"
+                   Text="Libero: 1 persona"
+                   FontSize="20"
+                    TextColor="Green"/>
+
+            </StackLayout>
+            <Button x:Name="Btn_Prenota"
+                    Text="PRENOTA"
+                    IsEnabled="False"
+                    IsVisible="False"
+                    Clicked="Btn_Prenota_Clicked"
+                    BackgroundColor="PaleVioletRed"
+                    HorizontalOptions="Fill"
+                    Visual="Material"
+                 BorderColor="Blue" BorderWidth="2" FontAttributes="Bold"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
