@@ -28,11 +28,10 @@
 
             <Label x:Name="lblcitta"
                 Text="Città:"
-                       HorizontalTextAlignment="Start"
-                        FontSize="20"
-                        TextColor="Black" 
-                       Visual="Material"  
-                       />
+                   HorizontalTextAlignment="Start"
+                   FontSize="20"
+                   TextColor="Black" 
+                   Visual="Material"/>
             <Picker 
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="Start"
@@ -53,30 +52,29 @@
                    TextColor="Black"
                    />
             <Picker 
-                    
-	                 x:Name="MarketPicker" 
-	                  Title="Markets" 	
-                     FontAttributes="Italic"
-                        SelectedIndexChanged="MarketSelectedIndexChanged"
-                    IsEnabled="False"
-                     VerticalOptions="Center">
-                </Picker>
+                x:Name="MarketPicker"
+                Title="Markets"
+                FontAttributes="Italic"
+                SelectedIndexChanged="MarketSelectedIndexChanged"
+                IsEnabled="False"
+                VerticalOptions="Center">
+            </Picker>
 
             <StackLayout  Orientation="Horizontal" HorizontalOptions="Start" VerticalOptions="Center" Visual="Material">
                 <Label Text="Data:"
-                   FontSize="20"
+                   FontSize="19"
                    TextColor="Black"/>
                 <DatePicker 
-	            x:Name="DatePicker" 
-                IsEnabled="False"
-	            Format="d"
-                MinimumDate="{Binding ExpenseDate}"
- 	            VerticalOptions="Center" 	
-                DateSelected="DatePickerDateSelected">
+	                x:Name="DatePicker" 
+                    IsEnabled="False"
+	                Format="d"
+                    MinimumDate="{Binding ExpenseDate}"
+ 	                VerticalOptions="Center" 	
+                    DateSelected="DatePickerDateSelected">
                 </DatePicker>
 
                 <Label Text="Orario:"
-                   FontSize="20"
+                   FontSize="19"
                    HorizontalOptions="End"
                    TextColor="Black"/>
                 <Picker 
