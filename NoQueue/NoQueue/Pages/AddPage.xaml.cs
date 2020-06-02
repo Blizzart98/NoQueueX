@@ -46,14 +46,17 @@ namespace NoQueue.Pages
 
         private void PickerSelectedIndexChanged(object sender, EventArgs e)
         {
-            city= CityPicker.Items[CityPicker.SelectedIndex];
+            city= CityPicker.Items[CityPicker.SelectedIndex]; 
             PopolaMarketPicker(city);
             MarketPicker.IsEnabled = true;
+            Btn_Prenota.IsEnabled = false;
+
         }
         private async void MarketSelectedIndexChanged(object sender, EventArgs e)
         {
             market = MarketPicker.Items[MarketPicker.SelectedIndex];
             DatePicker.IsEnabled = true;
+            Btn_Prenota.IsEnabled = false;
         }
 
         private void DatePickerDateSelected(object sender, EventArgs e) 
@@ -61,8 +64,9 @@ namespace NoQueue.Pages
             year = DatePicker.Date.Year;
             month = DatePicker.Date.Month;
             day = DatePicker.Date.Day;
-            date = DatePicker.Date.ToString().Substring(0, 8);
+            date = DatePicker.Date.ToLongDateString();
             HourPicker.IsEnabled = true;
+            Btn_Prenota.IsEnabled = false;
         }
 
         private void HourSelectedIndexChanged(object sender, EventArgs e)
@@ -70,27 +74,39 @@ namespace NoQueue.Pages
             hour = HourPicker.Items[HourPicker.SelectedIndex];
             MinutePicker.IsEnabled = true;
            ihour = Convert.ToInt32(hour);
+            Btn_Prenota.IsEnabled = false;
         }
 
         private void MinuteSelectedIndexChanged(object sender, EventArgs e)
         {
             minute = MinutePicker.Items[MinutePicker.SelectedIndex];
-            timeCheck++;
-            //if (timeCheck > 9)
-                Btn_Check.IsEnabled = true;
+            Btn_Check.IsEnabled = true;
             iminute = Convert.ToInt32(minute);
+            Btn_Prenota.IsEnabled = false;
         }
 
         private async void Btn_Check_Clicked(object sender, EventArgs e)
         {
-             int[] count = { 0 };
-
-            
-            
-
+            var email = auth.GetEmail();
+            int[] count = { 0 };
             dt = new DateTime(year, month, day, ihour, iminute, 0, 0);
-
             ts = MillisecondsTimestamp(dt);
+
+            var doc = await CrossCloudFirestore.Current
+                         .Instance
+                         .GetCollection("utenti")
+                         .GetDocument(email)
+                         .GetCollection("Prenotazioni")
+                         .GetDocument(market + date)
+                         .GetDocumentAsync();
+
+            if (doc.Exists)
+            {
+                await DisplayAlert("Errore", "Hai già effettuato una prenotazione per questa data in questo supermercato." +
+                    "\n Lascia spazio per tutti", "OK");
+                Btn_Prenota.IsEnabled = false;
+                return;
+            }
 
             var group = await CrossCloudFirestore.Current
                          .Instance
@@ -134,14 +150,15 @@ namespace NoQueue.Pages
                          .GetCollection("utenti")
                          .GetDocument(email)
                          .GetCollection("Prenotazioni")
-                         .CreateDocument()
+                         .GetDocument(market + date)
                          .SetDataAsync(prenotazione);
+
             await CrossCloudFirestore.Current
                          .Instance
                          .GetCollection("Supermercati")
                          .GetDocument(market)
                          .GetCollection("Prenotazioni")
-                         .CreateDocument()
+                         .GetDocument(email + date)
                          .SetDataAsync(prenotazione);
 
             Navigation.PushAsync(new ListPage());
@@ -151,22 +168,6 @@ namespace NoQueue.Pages
         }
         private void PopolaMarketPicker(string city)
         {
-           /* var picker = new Picker();
-            var marketsCupra = new List<string>
-            {
-                "Si con te - Cavalletti Michele",
-                "Supermercato Coal - Via C.Battisti",
-                "Alimentari Mauro"
-            };
-
-
-            var marketsCamerano = new List<string> 
-            {   "Si con te - Via Fazioli",
-                "Si con te - Via Loretana",
-                "Supermercato Coal - San Germano",
-                "Ipermercato Carrefour"
-            };*/
-
 
             if (city == "Camerano")
             {
@@ -181,7 +182,7 @@ namespace NoQueue.Pages
             {
                 MarketPicker.Items.Clear();
                 MarketPicker.Items.Add("Si con te - Cavalletti Michele");
-                MarketPicker.Items.Add("Supermercato Coal - Via C.Battisti");
+                MarketPicker.Items.Add("Supermercato Coal - Via C. Battisti");
                 MarketPicker.Items.Add("Alimentari Mauro");
             }
             else
@@ -194,6 +195,12 @@ namespace NoQueue.Pages
         {
             DateTime baseDate = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
             return (long)(d.ToUniversalTime() - baseDate).TotalMilliseconds / 1000;
+        }
+
+        private void ToolbarItem_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new ListPage());
+            Navigation.RemovePage(this);
         }
     }
 }

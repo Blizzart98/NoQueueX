@@ -4,6 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             Padding="15"
+             BackgroundColor="White"
              x:Class="NoQueue.Pages.ListPage">
     
     <ContentPage.ToolbarItems>
@@ -23,38 +25,59 @@
             ItemsSource="{Binding PersonList}"
             CachingStrategy="RecycleElement"
             HasUnevenRows="True">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                     <ViewCell>
-                        <StackLayout Padding="5">
-                             <Label Text="{Binding citta}" 
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <ViewCell.ContextActions>
+                        <MenuItem 
+                            Clicked="MenuItem_Clicked"
+                            CommandParameter="{Binding .}"
+                            Text="Delete" IsDestructive="True" />
+                    </ViewCell.ContextActions>
+                    <Grid
+                        Margin="10"
+                        BackgroundColor="LightSteelBlue"
+                        Padding="10">
+                        <StackLayout>
+                        <Label Text="{Binding citta}"
+                               FontAttributes="Bold"
+                               TextColor="Black"
                                 d:Text="{Binding .}"
                                 Style="{DynamicResource ListItemTextStyle}" />
-                            <Label Text="{Binding negozio}" 
+                        <Label Text="{Binding negozio}" 
                                 d:Text="Detail"
+                               FontAttributes="Bold"
+                               TextColor="Black"
                                 Style="{DynamicResource ListItemDetailTextStyle}"/>
-                            <StackLayout
+                        <StackLayout
                                 Orientation="Horizontal">
-                                <Label Text="{Binding data}" 
+                            <Label Text="{Binding data}" 
+                                   FontAttributes="Bold"
+                                   TextColor="Black"
                                     d:Text="Detail"
                                     Style="{DynamicResource ListItemDetailTextStyle}"/>
-                                <Label Text="{Binding ora}"
-                                       HorizontalTextAlignment="End"
-                                    d:Text="Detail"
-                                    Style="{DynamicResource ListItemDetailTextStyle}"/> 
-                                <Label Text=" : "
+                            <Label Text="{Binding ora}"
                                     HorizontalTextAlignment="End"
+                                   FontAttributes="Bold"
+                                   TextColor="Black"
                                     d:Text="Detail"
                                     Style="{DynamicResource ListItemDetailTextStyle}"/>
-                                 <Label Text="{Binding minuti}" 
+                            <Label Text=" : "
+                                    HorizontalTextAlignment="End"
+                                   TextColor="Black"
+                                   FontAttributes="Bold"
                                     d:Text="Detail"
                                     Style="{DynamicResource ListItemDetailTextStyle}"/>
-                            </StackLayout>
-                            
+                            <Label Text="{Binding minuti}" 
+                                    d:Text="Detail"
+                                   TextColor="Black"
+                                   FontAttributes="Bold"
+                                    Style="{DynamicResource ListItemDetailTextStyle}"/>
                         </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-             </ListView.ItemTemplate>
-
-  </ListView>
+                    </StackLayout>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
 </ContentPage>

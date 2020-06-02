@@ -5,6 +5,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="NoQueue.Pages.AddPage">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Annulla"
+                     Clicked="ToolbarItem_Clicked"
+                     Order="Primary"
+                     Priority="0" />
+    </ContentPage.ToolbarItems>
+    
     <ContentPage.Content>
         <StackLayout
             TranslationY="10"
@@ -25,7 +33,7 @@
                         TextColor="Black" 
                        Visual="Material"  
                        />
-                <Picker 
+            <Picker 
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="Start"
 	                x:Name="CityPicker" 
@@ -34,21 +42,17 @@
                     FontAttributes="Italic"
                    
                     Visual="Material" >
-                    <Picker.Items>
-                        <x:String>Camerano</x:String>
-                        <x:String>Cupramontana</x:String>
-                    </Picker.Items>
-                </Picker>
+                <Picker.Items>
+                    <x:String>Camerano</x:String>
+                    <x:String>Cupramontana</x:String>
+                </Picker.Items>
+            </Picker>
 
-           
-
-            
             <Label Text="Market:"
                    FontSize="20"
                    TextColor="Black"
                    />
-
-                <Picker 
+            <Picker 
                     
 	                 x:Name="MarketPicker" 
 	                  Title="Markets" 	

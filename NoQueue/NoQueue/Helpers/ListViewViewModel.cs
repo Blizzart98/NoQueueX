@@ -25,15 +25,7 @@ namespace NoQueue.Helpers
 
         public async void Start()
         {
-            /*PersonList = new ObservableCollection<Prenotazione>
-            {
-                new Prenotazione(){ citta = "John", negozio = "Los Angeles"},
-                new Prenotazione(){ citta = "John", negozio = "Los Angeles"},
-                new Prenotazione(){ citta = "John", negozio = "Los Angeles"},
-                new Prenotazione(){ citta = "John", negozio = "Los Angeles"},
-            };*/
-
-            IEnumerable<Prenotazione> list = await GetUserPostsList();//lancia funzione sotto e salva in list
+           IEnumerable<Prenotazione> list = await GetUserPostsList();//lancia funzione sotto e salva in list
            
             foreach (Prenotazione a in list)//aggiunge le prenotazioni alla observable collection, colection che verrà poi visualizzata
             {
@@ -56,7 +48,6 @@ namespace NoQueue.Helpers
 
             var yourModels = group.ToObjects<Prenotazione>();
             return yourModels;
-
         }
     }
    
