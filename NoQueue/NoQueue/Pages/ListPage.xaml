@@ -19,9 +19,9 @@
             Order="Primary"
             Priority="1" />
     </ContentPage.ToolbarItems>
-    
+
     <StackLayout>
-        
+
         <ListView x:Name="MyListView"
             ItemsSource="{Binding PersonList}"
             CachingStrategy="RecycleElement"
@@ -97,11 +97,5 @@
             BackgroundColor="Yellow"
             Clicked="BtnAdd_Clicked">
         </Button>
-
     </StackLayout>
-    
-    
-   
-
-
 </ContentPage>
