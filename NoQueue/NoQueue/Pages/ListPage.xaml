@@ -85,18 +85,18 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <local:CircleButton 
-            HorizontalOptions="End"
-            VerticalOptions="End"
-        FontIcon="Material"
-            Icon="md-add"
-        FontSize="30" TextColor="Black" 
-        HeightRequest="70" WidthRequest="70" 
-        BorderThickness="5" BorderColor="Blue" 
-        BackgroundColor="Yellow"
+        <Button 
+            WidthRequest="60" HeightRequest="60" 
+            BorderRadius="30"
+            HorizontalOptions="End" VerticalOptions="End"
+            Margin="10"
+            FontSize="30" TextColor="Black" 
+            BorderColor="Black" 
+            BorderWidth="2"
+            Text="+"
+            BackgroundColor="Yellow"
             Clicked="BtnAdd_Clicked">
-        </local:CircleButton>
-
+        </Button>
 
     </StackLayout>
     
