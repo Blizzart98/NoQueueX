@@ -6,7 +6,8 @@
              mc:Ignorable="d"
              Padding="15"
              BackgroundColor="White"
-             x:Class="NoQueue.Pages.ListPage">
+             x:Class="NoQueue.Pages.ListPage"
+             Title="Lista prenotazioni">
     
     <ContentPage.ToolbarItems>
         <ToolbarItem

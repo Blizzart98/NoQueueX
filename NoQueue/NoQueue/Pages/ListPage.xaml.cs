@@ -28,17 +28,23 @@ namespace NoQueue.Pages
 
         public async void ToolbarItem_Clicked(object sender, EventArgs e)
         {
-            bool result = await auth.LogOut();
-            if (result)
-            {
+            bool logout = await DisplayAlert("LOGOUT", "Vuoi davvero fare il logout?", "OK", "ANNULLA");
 
-                Navigation.PushAsync(new MainPage());
-                Navigation.RemovePage(this);
-            }
-            else
+            if (logout)
             {
-                ShowError();
+                bool result = await auth.LogOut();
+                if (result)
+                {
+
+                    Navigation.PushAsync(new MainPage());
+                    Navigation.RemovePage(this);
+                }
+                else
+                {
+                    ShowError();
+                }
             }
+           
         }
         public void ToolbarItem_ClickedAdd(object sender, EventArgs e)
         {

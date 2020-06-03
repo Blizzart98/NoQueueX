@@ -56,11 +56,11 @@ namespace NoQueue
                          .CreateDocument()
                          .SetDataAsync(user);
 
-             await DisplayAlert("Benvenuti!", "Cliccare sul pulsante \"+\" per aggiungere una prenotazione. \n  " +
-                    "Tenerla premuta per poterla eliminare.", "OK");
-
                 await Navigation.PushAsync(new ListPage());
-                Navigation.RemovePage(this);  
+                Navigation.RemovePage(this);
+
+                await DisplayAlert("Benvenuti!", "Cliccare sul pulsante \"+\" per aggiungere una prenotazione. \n  " +
+                    "Tenerla premuta per poterla eliminare.", "OK");
             }
             else
             {
