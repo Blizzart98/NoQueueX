@@ -32,15 +32,13 @@ namespace NoQueue.Pages
         static public string hour;
         static public int ihour;
 
-        int timeCheck = 0;
-
         private long ts;
         DateTime dt;
-        InterfaceAuth auth;
+        readonly INterfaceAuth auth;
         public AddPage()
         {
             InitializeComponent();
-            auth = DependencyService.Get<InterfaceAuth>();
+            auth = DependencyService.Get<INterfaceAuth>();
             DatePicker.SetValue(DatePicker.MinimumDateProperty, DateTime.Now);
         }
 
@@ -52,7 +50,7 @@ namespace NoQueue.Pages
             Btn_Prenota.IsEnabled = false;
 
         }
-        private async void MarketSelectedIndexChanged(object sender, EventArgs e)
+        private void MarketSelectedIndexChanged(object sender, EventArgs e)
         {
             market = MarketPicker.Items[MarketPicker.SelectedIndex];
             DatePicker.IsEnabled = true;
@@ -161,7 +159,7 @@ namespace NoQueue.Pages
                          .GetDocument(email + date)
                          .SetDataAsync(prenotazione);
 
-            Navigation.PushAsync(new ListPage());
+            await Navigation.PushAsync(new ListPage());
             Navigation.RemovePage(this);
 
 

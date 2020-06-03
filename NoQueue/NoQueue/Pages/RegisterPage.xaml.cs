@@ -16,13 +16,13 @@ namespace NoQueue
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RegisterPage : ContentPage
     {
-        InterfaceAuth auth;
+        readonly INterfaceAuth auth;
         
 
         public RegisterPage()
         {
             InitializeComponent();       
-            auth = DependencyService.Get<InterfaceAuth>();
+            auth = DependencyService.Get<INterfaceAuth>();
      
         }
 
@@ -39,7 +39,7 @@ namespace NoQueue
             bool email = IsValidEmail(Entry_email.Text);
             if (!email)
             {
-                DisplayAlert("Errore", "Inserisci un indirizzo email valido", "OK");
+                await DisplayAlert("Errore", "Inserisci un indirizzo email valido", "OK");
                 return;
             }
 

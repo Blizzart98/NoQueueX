@@ -22,7 +22,7 @@ using Android.Preferences;
 [assembly:Dependency(typeof(NoQueue.Droid.AuthDroid))]
 namespace NoQueue.Droid
 {
-    public class AuthDroid : InterfaceAuth
+    public class AuthDroid : INterfaceAuth
     {
        
         public AuthDroid()
@@ -40,14 +40,14 @@ namespace NoQueue.Droid
                 //shared preferences
                 Context mContext = Android.App.Application.Context;
                 AppPreferences ap = new AppPreferences(mContext);
-                ap.saveAccessKey(true);
-                ap.saveAccessEmail(email);
-                ap.saveAccessPass(password);
+                ap.SaveAccessKey(true);
+                ap.SaveAccessEmail(email);
+                ap.SaveAccessPass(password);
                 
                 return true;
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -67,21 +67,21 @@ namespace NoQueue.Droid
         {
             Context mContext = Android.App.Application.Context;
             AppPreferences ap = new AppPreferences(mContext);
-            return ap.getAccessKey();
+            return ap.GetAccessKey();
         }
 
         public string GetEmail()
         {
             Context mContext = Android.App.Application.Context;
             AppPreferences ap = new AppPreferences(mContext);
-            return ap.getAccessEmail();
+            return ap.GetAccessEmail();
         }
 
         public string GetPass()
         {
             Context mContext = Android.App.Application.Context;
             AppPreferences ap = new AppPreferences(mContext);
-            return ap.getAccessPass();
+            return ap.GetAccessPass();
         }
         public bool IsAuthenticated()
         {
@@ -92,11 +92,11 @@ namespace NoQueue.Droid
         {
             Context mContext = Android.App.Application.Context;
             AppPreferences ap = new AppPreferences(mContext);
-            ap.saveAccessKey(false);
-            ap.saveAccessPass("");
-            ap.saveAccessEmail("");
+            ap.SaveAccessKey(false);
+            ap.SaveAccessPass("");
+            ap.SaveAccessEmail("");
             FirebaseAuth.Instance.SignOut();
-            return true;
+           return true;
 
         }
 
@@ -115,9 +115,9 @@ namespace NoQueue.Droid
                 //shared preferences
                 Context mContext = Android.App.Application.Context;
                 AppPreferences ap = new AppPreferences(mContext);
-                ap.saveAccessKey(true);
-                ap.saveAccessEmail(email);
-                ap.saveAccessPass(password);
+                ap.SaveAccessKey(true);
+                ap.SaveAccessEmail(email);
+                ap.SaveAccessPass(password);
 
                 return true;
             }
@@ -133,7 +133,7 @@ namespace NoQueue.Droid
             {
                 throw new Exception(ex.Message);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw new Exception("An unknown error occurred, please try again.");
             }

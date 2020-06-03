@@ -30,14 +30,18 @@
                IsPassword="true"/>
         
         <Button x:Name="Btn_signin" 
-                Text="Log in" 
+                Text="Log in"
+                HorizontalOptions="End"
                 BackgroundColor="#4682B4"
                 TextColor="White"
+                CornerRadius="10"
                 Clicked="Btn_signin_Clicked"/>
         
         <Button x:Name="Btn_registration" 
-                BackgroundColor="#4682B4"
+                BackgroundColor="MediumPurple"
+                VerticalOptions="End"
                 TextColor="White"
+                CornerRadius="10"
                 Text="Non hai ancora un account?"
                 Clicked="Btn_registration_Clicked"/>
        

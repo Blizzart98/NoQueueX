@@ -3,12 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:ButtonCircle.FormsPlugin.Abstractions;assembly=ButtonCircle.FormsPlugin.Abstractions"
              mc:Ignorable="d"
              Padding="15"
              BackgroundColor="White"
              x:Class="NoQueue.Pages.ListPage"
              Title="Lista prenotazioni">
     
+   
     <ContentPage.ToolbarItems>
         <ToolbarItem
             Text=""
@@ -16,72 +18,90 @@
             IconImageSource="icon_logout.png"
             Order="Primary"
             Priority="1" />
-        <ToolbarItem Text=""
-                     Clicked="ToolbarItem_ClickedAdd"
-                     IconImageSource="icon_add.png"
-                     Priority="0" />
     </ContentPage.ToolbarItems>
-
-    <ListView x:Name="MyListView"
+    
+    <StackLayout>
+        
+        <ListView x:Name="MyListView"
             ItemsSource="{Binding PersonList}"
             CachingStrategy="RecycleElement"
             HasUnevenRows="True">
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <ViewCell>
-                    <ViewCell.ContextActions>
-                        <MenuItem 
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.ContextActions>
+                            <MenuItem 
                             Clicked="MenuItem_Clicked"
                             CommandParameter="{Binding .}"
                             Text="Delete" IsDestructive="True" />
-                    </ViewCell.ContextActions>
-                    <Frame CornerRadius="15"
+                        </ViewCell.ContextActions>
+                        <Frame CornerRadius="15"
                            Margin="15"
                            BackgroundColor="LightSteelBlue"
                            OutlineColor="Black"
                            Padding="0">
-                        <StackLayout
+                            <StackLayout
                             Margin="10">
-                            <Label Text="{Binding citta}"
+                                <Label Text="{Binding citta}"
                                FontSize="Subtitle"
                                HorizontalTextAlignment="Center"
                                TextColor="Black"/>
-                            <Label Text="{Binding negozio}" 
+                                <Label Text="{Binding negozio}" 
                                d:Text="Detail"
                                FontSize="Title"
                                HorizontalTextAlignment="Center"
                                FontAttributes="Bold"
                                TextColor="Black"/>
-                            <StackLayout
+                                <StackLayout
                                 Orientation="Horizontal">
-                                <Label Text="{Binding data}" 
+                                    <Label Text="{Binding data}" 
                                    TextColor="Black"
                                    d:Text="Detail"
                                    Style="{DynamicResource ListItemDetailTextStyle}"/>
-                                <StackLayout
+                                    <StackLayout
                                 Orientation="Horizontal"
                                 HorizontalOptions="EndAndExpand">
-                                    <Label Text="{Binding ora}"
+                                        <Label Text="{Binding ora}"
                                        FontAttributes="Bold"
                                        TextColor="Black"
                                        d:Text="Detail"
                                        Style="{DynamicResource ListItemDetailTextStyle}"/>
-                                    <Label Text=":"
+                                        <Label Text=":"
                                        TextColor="Black"
                                        FontAttributes="Bold"
                                        d:Text="Detail"
                                        Style="{DynamicResource ListItemDetailTextStyle}"/>
-                                    <Label Text="{Binding minuti}"
+                                        <Label Text="{Binding minuti}"
                                        d:Text="Detail"
                                        TextColor="Black"
                                        FontAttributes="Bold"
                                        Style="{DynamicResource ListItemDetailTextStyle}"/>
+                                    </StackLayout>
                                 </StackLayout>
                             </StackLayout>
-                        </StackLayout>
-                    </Frame>
-                </ViewCell>
-            </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <local:CircleButton 
+            HorizontalOptions="End"
+            VerticalOptions="End"
+        FontIcon="Material"
+            Icon="md-add"
+        FontSize="30" TextColor="Black" 
+        HeightRequest="70" WidthRequest="70" 
+        BorderThickness="5" BorderColor="Blue" 
+        BackgroundColor="Yellow"
+            Clicked="BtnAdd_Clicked">
+        </local:CircleButton>
+
+
+    </StackLayout>
+    
+    
+   
+
+
 </ContentPage>

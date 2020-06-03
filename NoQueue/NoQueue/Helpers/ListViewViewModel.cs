@@ -14,7 +14,7 @@ namespace NoQueue.Helpers
 {
     public class ListViewViewModel
     {
-        InterfaceAuth auth = DependencyService.Get<InterfaceAuth>();
+        readonly INterfaceAuth auth = DependencyService.Get<INterfaceAuth>();
 
         public ObservableCollection<Prenotazione> PersonList { get; set; } = new ObservableCollection<Prenotazione>();
         public ListViewViewModel()

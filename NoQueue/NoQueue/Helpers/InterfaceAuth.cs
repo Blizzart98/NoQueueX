@@ -6,7 +6,7 @@ using Xamarin.Forms;
 
 namespace NoQueue
 {
-   public interface InterfaceAuth
+   public interface INterfaceAuth
     {
         Task<bool> AuthenticateUser(string email, string password);
 
@@ -26,7 +26,7 @@ namespace NoQueue
 
     public class Auth
     {
-        private static InterfaceAuth auth = DependencyService.Get<InterfaceAuth>();
+        private static readonly INterfaceAuth auth = DependencyService.Get<INterfaceAuth>();
 
         public static async Task<bool> RegisterUser(string email, string password)
         {

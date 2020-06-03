@@ -15,11 +15,11 @@ namespace NoQueue
     [DesignTimeVisible (false)]
     public partial class MainPage : ContentPage
     {
-        InterfaceAuth auth;
+        readonly INterfaceAuth auth;
         public MainPage()
         {
             InitializeComponent();
-            auth = DependencyService.Get<InterfaceAuth>();
+            auth = DependencyService.Get<INterfaceAuth>();
 
             bool firstrun = auth.GetSharedPreferences();
             if (firstrun)
@@ -34,7 +34,7 @@ namespace NoQueue
             if (result)
             {
                 
-                Navigation.PushAsync(new ListPage());
+                await Navigation.PushAsync(new ListPage());
                 Navigation.RemovePage(this);
             }
             else
@@ -49,7 +49,7 @@ namespace NoQueue
             bool result = await auth.AuthenticateUser(a, b);
             if (result)
             {
-                Navigation.PushAsync(new ListPage());
+                await Navigation.PushAsync(new ListPage());
                 Navigation.RemovePage(this);
             }
             else

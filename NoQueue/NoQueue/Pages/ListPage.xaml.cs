@@ -6,7 +6,6 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
-using NoQueue.Helpers;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -17,11 +16,11 @@ namespace NoQueue.Pages
     {
         public ObservableCollection<string> Items { get; set; }
 
-        InterfaceAuth auth;
+        readonly INterfaceAuth auth;
         public ListPage()
         {
             InitializeComponent();
-            auth = DependencyService.Get<InterfaceAuth>();
+            auth = DependencyService.Get<INterfaceAuth>();
             BindingContext = new ListViewViewModel();
             
         }
@@ -36,7 +35,7 @@ namespace NoQueue.Pages
                 if (result)
                 {
 
-                    Navigation.PushAsync(new MainPage());
+                    await Navigation.PushAsync(new MainPage());
                     Navigation.RemovePage(this);
                 }
                 else
@@ -46,7 +45,7 @@ namespace NoQueue.Pages
             }
            
         }
-        public void ToolbarItem_ClickedAdd(object sender, EventArgs e)
+        public void BtnAdd_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new AddPage());
             Navigation.RemovePage(this);
@@ -78,7 +77,7 @@ namespace NoQueue.Pages
                           .GetDocument(auth.GetEmail() + info.data)
                           .DeleteDocumentAsync();
 
-            Navigation.PushAsync(new ListPage()); //così la pagina si aggiorna
+            await Navigation.PushAsync(new ListPage()); //così la pagina si aggiorna
             Navigation.RemovePage(this);
         }
     }

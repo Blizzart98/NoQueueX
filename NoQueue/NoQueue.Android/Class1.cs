@@ -15,11 +15,11 @@ namespace NoQueue.Droid
 {
     public class AppPreferences
     {
-        private ISharedPreferences mSharedPrefs;
-        private ISharedPreferencesEditor mPrefsEditor;
-        private Context mContext;
+        private readonly ISharedPreferences mSharedPrefs;
+        private readonly ISharedPreferencesEditor mPrefsEditor;
+        private readonly Context mContext;
 
-        private static String PREFERENCE_ACCESS_KEY = "PREFERENCE_ACCESS_KEY";
+        private static readonly String PREFERENCE_ACCESS_KEY = "PREFERENCE_ACCESS_KEY";
 
         public AppPreferences(Context context)
         {
@@ -28,35 +28,35 @@ namespace NoQueue.Droid
             mPrefsEditor = mSharedPrefs.Edit();
         }
 
-        public void saveAccessKey(bool key)
+        public void SaveAccessKey(bool key)
         {
             mPrefsEditor.PutBoolean(PREFERENCE_ACCESS_KEY, key);
             mPrefsEditor.Commit();
         }
 
-        public bool getAccessKey()
+        public bool GetAccessKey()
         {
             return mSharedPrefs.GetBoolean(PREFERENCE_ACCESS_KEY, false);
         }
 
-        public void saveAccessEmail(string key)
+        public void SaveAccessEmail(string key)
         {
             mPrefsEditor.PutString("Email", key);
             mPrefsEditor.Commit();
         }
 
-        public void saveAccessPass(string key)
+        public void SaveAccessPass(string key)
         {
             mPrefsEditor.PutString("pass", key);
             mPrefsEditor.Commit();
         }
 
-        public string getAccessPass()
+        public string GetAccessPass()
         {
             return mSharedPrefs.GetString("pass", "");
         }
 
-        public string getAccessEmail()
+        public string GetAccessEmail()
         {
             return mSharedPrefs.GetString("Email", "");
         }
