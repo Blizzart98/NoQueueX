@@ -125,14 +125,18 @@
 
 
             <StackLayout  Orientation="Horizontal" HorizontalOptions="Start" VerticalOptions="Center" Visual="Material">
-                <Button x:Name="Btn_Check"
-                        Clicked="Btn_Check_Clicked"
+                <Button 
+                    x:Name="Btn_Check"
+                    Clicked="Btn_Check_Clicked"
                     Text="CHECK" 
+                    CornerRadius="10"
                     IsEnabled="False"
                     BackgroundColor="CornflowerBlue"
                     HorizontalOptions="Center"
                     Visual="Material"
-                    BorderColor="Blue" BorderWidth="2" FontAttributes="Bold"/>
+                    BorderColor="Black" 
+                    BorderWidth="2" 
+                    FontAttributes="Bold"/>
 
                 <Label x:Name="lblCheck"
                    Text=""
@@ -145,11 +149,12 @@
                     Text="PRENOTA"
                     IsEnabled="False"
                     IsVisible="True"
+                    CornerRadius="10"
                     Clicked="Btn_Prenota_Clicked"
-                    BackgroundColor="PaleVioletRed"
+                    BackgroundColor="MediumPurple"
                     HorizontalOptions="Fill"
                     Visual="Material"
-                    BorderColor="Blue" 
+                    BorderColor="Black" 
                     BorderWidth="2" 
                     FontAttributes="Bold"/>
         </StackLayout>
