@@ -55,6 +55,7 @@ namespace NoQueue.Pages
             market = MarketPicker.Items[MarketPicker.SelectedIndex];
             DatePicker.IsEnabled = true;
             Btn_Prenota.IsEnabled = false;
+            HourPicker.IsEnabled = true;
         }
 
         private void DatePickerDateSelected(object sender, EventArgs e) 
@@ -63,7 +64,6 @@ namespace NoQueue.Pages
             month = DatePicker.Date.Month;
             day = DatePicker.Date.Day;
             date = DatePicker.Date.ToLongDateString();
-            HourPicker.IsEnabled = true;
             Btn_Prenota.IsEnabled = false;
         }
 
