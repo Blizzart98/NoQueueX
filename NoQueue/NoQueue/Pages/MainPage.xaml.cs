@@ -68,5 +68,26 @@ namespace NoQueue
             Navigation.PushAsync(new RegisterPage());
             Navigation.RemovePage(this);
         }
+
+        async void Btn_reset_Clicked(object sender, EventArgs e)
+        {
+            if(Entry_email.Text == null)
+            {
+                await DisplayAlert("Errore", "Inserisci l'email se vuoi resettare la password", "OK");
+                return;
+            }
+               
+
+            bool result = await auth.ResetPassword(Entry_email.Text);
+            if (result)
+            {
+                await DisplayAlert("CHECK BOX MAIL", "Ti è stata inviata un'email", "OK"); 
+                
+            }
+            else
+            {
+                ShowError();
+            }
+        }
     }
 }

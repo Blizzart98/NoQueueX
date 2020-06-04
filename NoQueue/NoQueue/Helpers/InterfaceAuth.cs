@@ -12,6 +12,8 @@ namespace NoQueue
 
         Task<bool> RegisterUser(string email, string password);
 
+        Task<bool> ResetPassword(string email);
+
         bool IsAuthenticated();
         string GetCurrentUserId();
 
@@ -47,6 +49,19 @@ namespace NoQueue
             try
             {
                 return await auth.AuthenticateUser(email, password);
+            }
+            catch (Exception ex)
+            {
+                await App.Current.MainPage.DisplayAlert("Error", ex.Message, "Ok");
+                return false;
+            }
+        }
+
+        public static async Task<bool> ResetPassword(string email)
+        {
+            try
+            {
+                return await auth.ResetPassword(email);
             }
             catch (Exception ex)
             {

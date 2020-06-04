@@ -24,7 +24,7 @@ namespace NoQueue.Droid
 {
     public class AuthDroid : INterfaceAuth
     {
-       
+
         public AuthDroid()
         {
 
@@ -43,7 +43,7 @@ namespace NoQueue.Droid
                 ap.SaveAccessKey(true);
                 ap.SaveAccessEmail(email);
                 ap.SaveAccessPass(password);
-                
+
                 return true;
 
             }
@@ -96,11 +96,11 @@ namespace NoQueue.Droid
             ap.SaveAccessPass("");
             ap.SaveAccessEmail("");
             FirebaseAuth.Instance.SignOut();
-           return true;
+            return true;
 
         }
 
-        public async Task<bool> RegisterUser( string email, string password)
+        public async Task<bool> RegisterUser(string email, string password)
         {
             try
             {
@@ -139,6 +139,23 @@ namespace NoQueue.Droid
             }
 
         }
+
+        public async Task<bool> ResetPassword(string email)
+        {
+            try
+            {
+                await FirebaseAuth.Instance.SendPasswordResetEmailAsync(email);
+
+              
+
+                return true;
+
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
     }
-    
 }
