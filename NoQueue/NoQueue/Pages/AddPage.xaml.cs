@@ -40,6 +40,8 @@ namespace NoQueue.Pages
         {
             InitializeComponent();
             auth = DependencyService.Get<INterfaceAuth>();
+            //DatePicker.MinimumDate = DateTime.Now;
+            DatePicker.SetValue(DatePicker.MinimumDateProperty, DateTime.Today);
         }
 
         private void PickerSelectedIndexChanged(object sender, EventArgs e)
@@ -56,6 +58,12 @@ namespace NoQueue.Pages
             DatePicker.IsEnabled = true;
             Btn_Prenota.IsEnabled = false;
             HourPicker.IsEnabled = true;
+
+            //necessario se l'utente seleziona la data odierna, altrimenti l'evento del timepicker non si avvia
+            year = DatePicker.Date.Year;
+            month = DatePicker.Date.Month;
+            day = DatePicker.Date.Day;
+            date = DatePicker.Date.ToLongDateString();
         }
 
         private void DatePickerDateSelected(object sender, EventArgs e) 

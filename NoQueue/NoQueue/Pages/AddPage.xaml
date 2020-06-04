@@ -65,6 +65,7 @@
                    FontSize="19"
                    TextColor="Black"/>
                 <DatePicker 
+                     MinimumDate ="{Binding PropertyMinimumDate}"
 	                x:Name="DatePicker" 
                     IsEnabled="False"
 	                Format="d"
