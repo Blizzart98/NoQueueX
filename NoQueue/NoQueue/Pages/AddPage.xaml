@@ -68,7 +68,6 @@
 	                x:Name="DatePicker" 
                     IsEnabled="False"
 	                Format="d"
-                    MinimumDate="{Binding ExpenseDate}"
  	                VerticalOptions="Center" 	
                     DateSelected="DatePickerDateSelected">
                 </DatePicker>

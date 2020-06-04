@@ -40,7 +40,6 @@ namespace NoQueue.Pages
         {
             InitializeComponent();
             auth = DependencyService.Get<INterfaceAuth>();
-            DatePicker.SetValue(DatePicker.MinimumDateProperty, DateTime.Now);
         }
 
         private void PickerSelectedIndexChanged(object sender, EventArgs e)
