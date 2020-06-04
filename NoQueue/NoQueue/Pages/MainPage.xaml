@@ -44,16 +44,15 @@
                 CornerRadius="10"
                 Text="Non hai ancora un account?"
                 Clicked="Btn_registration_Clicked"/>
-        
+
         <Button x:Name="Btn_reset" 
-                BackgroundColor="MediumPurple"
+                BackgroundColor="Transparent"
                 VerticalOptions="End"
-                TextColor="White"
+                Margin="20"
+                TextColor="Blue"
                 CornerRadius="10"
                 Text="Reset password"
                 Clicked="Btn_reset_Clicked"/>
-        
-       
     </StackLayout>
 
 </ContentPage>

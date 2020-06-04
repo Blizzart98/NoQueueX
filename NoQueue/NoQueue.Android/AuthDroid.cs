@@ -145,9 +145,6 @@ namespace NoQueue.Droid
             try
             {
                 await FirebaseAuth.Instance.SendPasswordResetEmailAsync(email);
-
-              
-
                 return true;
 
             }
