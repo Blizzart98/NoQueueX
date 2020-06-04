@@ -86,7 +86,7 @@ namespace NoQueue
             }
             else
             {
-                ShowError();
+                await DisplayAlert("CHECK BOX MAIL", "Qualcosa è andato storto, l'email inserita è errata", "OK");
             }
         }
     }
