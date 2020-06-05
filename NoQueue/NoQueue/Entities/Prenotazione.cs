@@ -24,7 +24,7 @@ namespace NoQueue.Entities
         }
         public Prenotazione()
         {
-
+ 
         }
 
         public string GetCitta() { return citta; }
